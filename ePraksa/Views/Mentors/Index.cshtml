@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.Mentor>
+@{
+                /**/
+
+                ViewBag.Title = "Mentors";
+}
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>Mentors</h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table id="mentors" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Title</th>
+                        <th>Occupation</th>
+                        <th>Address</th>
+                        <th>Firm</th>
+                        <th>Years of experience</th>
+                     @*   <th><a href="@Url.Action("Create","Mentors")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>*@
+                        <th><a href="@Url.Action("RegisterMentor","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.FirstName</td>
+                            <td>@item.LastName</td>
+                            <td>@item.Title</td>
+                            <td>@item.Occupation</td>
+                            <td>@item.Address</td>
+                            <td>@item.Firm.Name</td>
+                            <td>@item.YearsOfExperience</td>
+                            <td>
+                                <a href="@Url.Action("Edit","Mentors", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
+                                <button class="btn btn-default btn-xs js-toggle" data-mentor-id="@item.Id"><i class="fa fa-folder"></i>@(item.Activated ? "Deactivate" : "Activate")</button>
+                                <button class="btn btn-danger btn-xs js-delete" data-mentor-id="@item.Id"><i class="fa fa-trash-o"></i>Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $('#mentors').DataTable();
+
+            $("#mentors").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to delete this mentor?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/mentors/delete/" + button.attr("data-mentor-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+            $("#mentors").on("click", ".js-toggle", function () {
+                var button = $(this);
+                bootbox.confirm("Toggle the status of this mentor?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/mentors/togglestatus/" + button.attr("data-mentor-id"),
+                            method: "POST",
+                            success: function () {
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

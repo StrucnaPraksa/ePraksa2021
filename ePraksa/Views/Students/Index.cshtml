@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.Student>
+@{
+    ViewBag.Title = "Students";
+}
+
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>Students</h3>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+            <table id="Students" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>City</th>
+                        <th>Faculty</th>
+                        <th>Course</th>
+                        <th>Year</th>
+                        <th>Active</th>
+                        <th><a href="@Url.Action("RegisterStudent","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                     @*   <th><a href="@Url.Action("Create","Students")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>*@
+                                               
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model) {
+                    <tr>
+                        <td>@item.Firstname</td>
+                        <td>@item.Lastname</td>
+                        <td>@item.City.Name</td>
+                        <td>@item.Faculty.Name</td>
+                        <td>@item.FacultyCourses.Course</td>
+                        <td>@item.YearOfStudies.Year</td>
+                        <td>
+                            @{
+                                if (item.Active == 1) {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Active</a>
+                                } else {
+                                    <a href="#" style="padding: 3px 10px 3px 10px; background-color:red " class="badge" readonly>Deactive</a>
+                                }
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details","Students", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>Details</a>
+                        </td>
+                        <td>
+                            <button class='btn btn-danger btn-xs js-delete' id='@item.Id'><i class='fa fa-trash-o'></i>Delete</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#Students').DataTable();
+        });
+
+        $("#Students").on("click", ".js-delete", function () {
+            var button = $(this);
+
+            bootbox.confirm("Are you sure to delete this?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/students/" + button.attr("id"),
+                        method: "DELETE",
+                        success: function () {
+                            table.row(button.parents("tr")).remove().draw();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.Faculty>
+@{
+    ViewBag.Title = "Faculties";
+}
+
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>FAKULTETI</h3>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+            <table id="Faculties" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Naziv</th>
+                        <th>Tip</th>
+                        <th>Sektor</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.FacultyTypes.Name</td>
+                        <td>@item.FacultySectors.Name</td>
+                        <td>
+                            <a href="@Url.Action("Details","Faculties", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>Details</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#Faculties').DataTable();
+        });
+    </script>
+}

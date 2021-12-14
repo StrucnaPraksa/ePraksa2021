@@ -1,0 +1,29 @@
+﻿<ul class="nav side-menu">
+    <li>
+        <a href="/"><i class="fa fa-home"></i> Dashboard </a>
+    </li>
+    <li>
+        <a><i class="fa fa-bar-chart-o"></i> Predlošci <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+            <li><a href="@Url.Action("Index","Students")"><i class="fa fa-edit"></i> Studenti</a></li>
+            <li><a href="@Url.Action("Index","Firms")"><i class="fa fa-edit"></i> Firme</a></li>
+            <li><a href="@Url.Action("Index","Mentors")"><i class="fa fa-edit"></i> Mentori</a></li>
+            <li><a href="@Url.Action("Index","Faculties")"><i class="fa fa-edit"></i> Fakulteti</a></li>
+            <li><a href="@Url.Action("Index","Patients")"><i class="fa fa-edit"></i> Osoba1</a></li>
+            <li> <a href="@Url.Action("Index","Persons")"><i class="fa fa-edit"></i> Osoba2</a> </li>
+            <li><a href="@Url.Action("Index","Profesors")"><i class="fa fa-edit"></i> Profesori</a></li>
+            <li><a href="@Url.Action("Index","Appointments")"><i class="fa fa-edit"></i> Obavijesti</a></li>
+        </ul>
+        </li>
+    <li> <a href="@Url.Action("Index","Account")"><i class="fa fa-edit"></i> Korisnici</a> </li>
+    <li>
+        <a><i class="fa fa-bar-chart-o"></i> Report <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+            <li><a href="@Url.Action("DaillyAppointments","Reports")">Dnevne obavijesti </a></li>
+            <li><a href="@Url.Action("Appointments","Reports")">Obavijesti </a></li>
+            <li><a href="@Url.Action("Attandences","Reports")">Prisutnost </a></li>
+
+        </ul>
+    </li>
+</ul>
+
