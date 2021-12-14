@@ -1,0 +1,88 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.Firm>
+@{
+    ViewBag.Title = "Firms";
+}
+
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>Firms</h3>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+            <table id="firms" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Address</th>
+                        <th>Type</th>
+                        <th><a href="@Url.Action("Create","Firms")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Description</td>
+                            <td>@item.FirmAddress.Street @item.FirmAddress.PostalNumber, @item.FirmAddress.City</td>
+                            <td>@item.FirmType.Type</td>
+                            <td>
+                                <a href="@Url.Action("Edit","Firms", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
+                                <button class="btn btn-default btn-xs js-toggle" data-firm-id="@item.Id"><i class="fa fa-folder"></i>@(item.Activated ? "Deactivate" : "Activate")</button>
+                                <button class="btn btn-danger btn-xs js-delete" data-firm-id="@item.Id"><i class="fa fa-trash-o"></i>Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            var table = $('#firms').DataTable();
+
+            $("#firms").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to delete this firm?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/firms/delete/" + button.attr("data-firm-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+            $("#firms").on("click", ".js-toggle", function () {
+                var button = $(this);
+
+                bootbox.confirm("Toggle the status of this firm?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/firms/togglestatus/" + button.attr("data-firm-id"),
+                            method: "POST",
+                            success: function () {
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            });
+    });
+    </script>
+}

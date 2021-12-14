@@ -1,0 +1,101 @@
+﻿@model PracticeManagement.Core.ViewModel.MentorFormViewModel
+@{
+    ViewBag.Title = Model.Heading;
+}
+<link href="~/Content/gridProfesor.css" rel="stylesheet" />
+@using (Html.BeginForm("Edit", "Mentors", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+{
+
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <span class="section">Mentor</span>
+                    @ViewBag.message
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">First name<span class="required">*</span> </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FirstName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last name<span class="required">*</span> </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.LastName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Firm <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.DropDownListFor(m => m.FirmId, new SelectList(Model.Firms, "Id", "Name"), "Select one", new { @class = "form-control col-md-7 col-xs-12" })
+                            @Html.ValidationMessageFor(m => m.FirmId)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Title <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Title)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Occupation <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Occupation, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Occupation)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Address <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Years of experience <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextBoxFor(m => m.YearsOfExperience, new { @class = "form-control", type = "number" })
+                            @Html.ValidationMessageFor(m => m.YearsOfExperience)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Competence <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextAreaFor(m => m.Competence, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Competence)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">CV <span class="required">*</span></label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            @Html.TextAreaFor(m => m.CV, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CV)
+                        </div>
+                    </div>
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-6">
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+}
+

@@ -1,0 +1,118 @@
+﻿@using PracticeManagement.Core.Models
+@model PracticeManagement.Core.ViewModel.StudentDetailViewModel
+@{
+    /**/
+
+    ViewBag.Title = "Details";
+}
+<!-- load partial here-->
+<div id="MyModal" class="modal fade in">
+    <div class="modal-dialog " style="width: 900px;">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Details</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel
+            <div class="x_content">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left ">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar -->
+                            <img class="img-responsive avatar-view" src="~/Content/images/user.png">
+                        </div>
+                    </div>
+                    <h3>@(Model.Student.Firstname + " " + Model.Student.Lastname)</h3>
+                    <ul class="list-unstyled user_data">
+                        <li> <i class="fa fa-user"><strong>ID:</strong> @Model.Student.Id</i></li>
+                        <li> <i class="fa fa-user"><strong>Firstname:</strong> @Model.Student.Firstname</i></li>
+                        <li> <i class="fa fa-user"><strong>Lastname:</strong> @Model.Student.Lastname</i></li>
+                        <li> <i class="fa fa-user"><strong>Email:</strong> @Model.Student.Email</i></li>
+                        <li> <i class="fa fa-user"><strong>City:</strong> @Model.Student.City.Name</i></li>
+                        <li> <i class="fa fa-user"><strong>Faculty:</strong> @Model.Student.Faculty.Name</i></li>
+                        <li> <i class="fa fa-user"><strong>FacultyCourse:</strong> @Model.Student.FacultyCourses.Course</i></li>
+                        <li> <i class="fa fa-user"><strong>Year:</strong> @Model.Student.YearOfStudies.Year</i></li>
+                        <li> <i class="fa fa-user"><strong>CV:</strong> @Model.Student.CV</i></li>
+
+
+                    </ul>
+                    <a href="@Url.Action("Edit", "Students", new { id= Model.Student.Id})" class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+                    <a href="@Url.Action("Index","Students")" class="btn btn-default">Back</a>
+                    <br />
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#StudentID").on("click", function () {
+                var link = $(this);
+                $.ajaxSetup({ cache: false });
+                var detailUrl = "/Appointments/Details/" + link.attr("data-appointment-id");
+                $("#MyModalContent").load(detailUrl, function () {
+                    $("#MyModal").modal({
+                        keyboard: false
+                    }, 'show');
+
+                });
+                return false;
+            });
+            $("#attendanceID").on("click", function () {
+                var link = $(this);
+                $.ajaxSetup({ cache: false });
+                var detailUrl = "/Attendances/Details/" + link.attr("data-attendance-id");
+                $("#MyModalContent").load(detailUrl, function () {
+                    $("#MyModal").modal({
+                        keyboard: false
+                    }, 'show');
+
+                });
+                return false;
+            });
+
+
+        });
+
+        $('.dataTables').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false,
+            "filter": false,
+            "info": false
+        });
+    </script>
+
+}
+
+
+
+
+
