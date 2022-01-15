@@ -19,24 +19,32 @@ namespace PracticeManagement.Core
         IFacultyTypeRepository FacultyTypes { get; }
 
         IFacultySectorRepository FacultySectors { get; }
+
         //IQuotaRepository Quotas { get; }
         IPracticeTypeRepository PracticeTypes { get; }
+
         IFirmRepository Firms { get; }
         IFirmTypeRepository FirmTypes { get; }
 
-      
         //IRatingTypeRepository RatingTypes { get; }
         IMentorRepository Mentors { get; }
+
         IStudentRepository Students { get; }
         IYearOfStudyRepository YearOfStudies { get; }
+
         //IInternshipRepository Internships { get; }
         //IStudentInternshipRepository StudentInternships { get; }
         //IStudentRatingRepository StudentRatings { get; }
         IFacultyCourseRepository FacultyCourses { get; }
+
         //IMentorRepository Mentors { get; }
-      
+
         //IPollRepository Polls { get; }
         //      IPollQuestionRepository PollQuestions{ get; }
+
+        IPracticeAttendanceRepository PracticeAttendances { get; }
+        IPracticeBreakRepository PracticeBreaks { get; }
+
         void Complete();
     }
 }

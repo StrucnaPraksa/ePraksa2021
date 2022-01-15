@@ -282,6 +282,8 @@
     <Compile Include="Core\Models\FacultyCourse.cs" />
     <Compile Include="Core\Models\FirmAddress.cs" />
     <Compile Include="Core\Models\FirmType.cs" />
+    <Compile Include="Core\Models\PracticeAttendance.cs" />
+    <Compile Include="Core\Models\PracticeBreak.cs" />
     <Compile Include="Core\Models\Student.cs" />
     <Compile Include="Core\Models\Mentor.cs" />
     <Compile Include="Core\Models\RatingType.cs" />
@@ -296,6 +298,8 @@
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
+    <Compile Include="Core\Repositories\IPracticeAttendanceRepository.cs" />
+    <Compile Include="Core\Repositories\IPracticeBreakRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
     <Compile Include="Core\Repositories\IFacultySectorRepository.cs" />
@@ -366,6 +370,8 @@
     <Compile Include="Persistence\EntityConfigurations\PatientConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientStatusConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PersonConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PracticeAttendanceConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PracticeBreakConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PracticeTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ProfesorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
@@ -385,6 +391,8 @@
     <Compile Include="Persistence\Repositories\MentorRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRepository.cs" />
+    <Compile Include="Persistence\Repositories\PracticeAttendanceRepository.cs" />
+    <Compile Include="Persistence\Repositories\PracticeBreakRepository.cs" />
     <Compile Include="Persistence\Repositories\PracticeTypeRespository.cs" />
     <Compile Include="Persistence\Repositories\ProfesorRepository.cs" />
     <Compile Include="Persistence\Repositories\SpecializationRepository.cs" />

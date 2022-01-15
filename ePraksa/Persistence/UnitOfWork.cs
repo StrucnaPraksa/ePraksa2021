@@ -19,20 +19,29 @@ namespace PracticeManagement.Persistence
         public IFacultyTypeRepository FacultyTypes { get; private set; }
         public IFacultySectorRepository FacultySectors { get; private set; }
         public IFaculty2Repository Faculties2 { get; private set; }
+
         //public IQuotaRepository Quotas { get; private set; }
         public IPracticeTypeRepository PracticeTypes { get; private set; }
+
         //public IRatingTypeRepository RatingTypes { get; private set; }
         public IMentorRepository Mentors { get; private set; }
+
         public IStudentRepository Students { get; private set; }
+
         //public IInternshipRepository Internships { get; private set; }
         //public IStudentInternshipRepository StudentInternships { get; private set; }
         //public IStudentRatingRepository StudentRatings { get; private set; }
         public IFacultyCourseRepository FacultyCourses { get; private set; }
+
         public IFirmRepository Firms { get; private set; }
         public IFirmTypeRepository FirmTypes { get; private set; }
+
         //public IPollRepository Polls { get; private set; }
         //      public IPollQuestionRepository PollQuestions { get; private set; }
         public IYearOfStudyRepository YearOfStudies { get; private set; }
+
+        public IPracticeAttendanceRepository PracticeAttendances { get; private set; }
+        public IPracticeBreakRepository PracticeBreaks { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -63,6 +72,8 @@ namespace PracticeManagement.Persistence
             //Polls = new PollRepository(context);
             //         PollQuestions = new PollQuestionRepository(context);
             YearOfStudies = new YearOfStudyRepository(context);
+            PracticeAttendances = new PracticeAttendanceRepository(context);
+            PracticeBreaks = new PracticeBreakRepository(context);
         }
 
         public void Complete()
