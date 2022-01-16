@@ -34,9 +34,12 @@ namespace PracticeManagement.Core
         //IStudentRatingRepository StudentRatings { get; }
         IFacultyCourseRepository FacultyCourses { get; }
         //IMentorRepository Mentors { get; }
-      
+
         //IPollRepository Polls { get; }
         //      IPollQuestionRepository PollQuestions{ get; }
+
+        IStudentPraksaRepository StudentPraksas { get; }
+        IStudentDnevnikRepository StudentDnevniks { get; }
         void Complete();
     }
 }

@@ -34,6 +34,10 @@ namespace PracticeManagement.Persistence
         //      public IPollQuestionRepository PollQuestions { get; private set; }
         public IYearOfStudyRepository YearOfStudies { get; private set; }
 
+        public IStudentPraksaRepository StudentPraksas { get; private set; }
+
+        public IStudentDnevnikRepository StudentDnevniks { get; private set; }
+
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
@@ -63,6 +67,8 @@ namespace PracticeManagement.Persistence
             //Polls = new PollRepository(context);
             //         PollQuestions = new PollQuestionRepository(context);
             YearOfStudies = new YearOfStudyRepository(context);
+            StudentPraksas = new StudentPraksaRepository(context);
+            StudentDnevniks = new StudentDnevnikRepository(context);
         }
 
         public void Complete()

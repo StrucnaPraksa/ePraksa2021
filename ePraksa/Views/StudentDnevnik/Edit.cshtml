@@ -1,0 +1,59 @@
+﻿@model PracticeManagement.Core.ViewModel.StudentDnevnikFormViewModel
+@{
+    ViewBag.Title = "Edit Student Dnevnik";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>Edit Student Dnevnik</h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="form-horizontal form-label-left">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(m => m.Id)
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Aktivnost</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.aktivnost, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.aktivnost)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Linkovi</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.linkovi, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.linkovi)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Dodatni Komentar (Student)</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.dodatno, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.dodatno)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Komentar (Mentor)</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextAreaFor(m => m.komentar, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.komentar)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                <a href="@Url.Action("Index","StudentDnevnik")" class="btn btn-default">Back</a>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
