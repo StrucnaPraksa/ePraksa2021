@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.StudentDnevnik>
+@{
+    ViewBag.Title = "StudentDnevnik";
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Pregled dnevnika stručne prakse</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table id="StudentDnevnik" class="data table table-striped no-margin">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>DATUM</th>
+                            <th>MENTOR</th>
+                            <th>FIRMA</th>
+                            <th>ODOBRENO</th>
+                            <th>ACTIONS</th>
+                            <th>ODOBRI PRAKSU</th>
+                            <th><a href="@Url.Action("Create","StudentDnevnik")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.datum.ToString("d")</td>
+                            <td>@item.StudentPraksa.Mentor.LastName</td>
+                            <td> @item.StudentPraksa.Firm.Name</td>
+                            <td>
+                                @{
+                                    if (item.Odobreno)
+                                    {
+                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Odobreno</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:red " class="badge" readonly>Nije Odobreno</a>
+                                    }
+                                }
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Details","StudentDnevnik", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>View</a>
+                                <a href="@Url.Action("Delete","StudentDnevnik", item)" class="btn btn-danger btn-xs"><i class="fa fa-trash-0"></i>Delete</a>
+                                @{
+                                    if (!item.Odobreno)
+                                    {
+                                        <a href="@Url.Action("Edit","StudentDnevnik", new { id = item.Id})" class="btn-link"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+                                    } else
+                                    {
+
+                                    }
+                                }
+                            </td>
+                            <td>
+                                <button class="btn btn-basic btn-block btn-xs js-toggle" data-StudentDnevnik-id="@item.Id"><i class="fa fa-toggle-on"></i>@(item.Odobreno ? "Ponisti" : "Odobri")</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#StudentDnevnik').DataTable();
+        });
+
+        $("#StudentDnevnik").on("click", ".js-toggle", function () {
+            var button = $(this);
+            bootbox.confirm("Jeste li sigurni da zelite promijeniti status (odobri-ponisti)?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/StudentDnevnik/ToggleStatus/" + button.attr("data-StudentDnevnik-id"),
+                        method: "POST",
+                        success: function () {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

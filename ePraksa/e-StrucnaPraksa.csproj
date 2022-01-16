@@ -270,6 +270,7 @@
     <Compile Include="Controllers\FirmsController.cs" />
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\StudentDnevnikController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Core\Dto\Faculty2Dto.cs" />
     <Compile Include="Core\Dto\FacultyTypeDto.cs" />
@@ -290,12 +291,16 @@
     <Compile Include="Core\Models\Faculty.cs" />
     <Compile Include="Core\Models\Persons.cs" />
     <Compile Include="Core\Models\PracticeType.cs" />
+    <Compile Include="Core\Models\StudentDnevnik.cs" />
+    <Compile Include="Core\Models\StudentPraksa.cs" />
     <Compile Include="Core\Models\YearOfStudy.cs" />
     <Compile Include="Core\Repositories\IFaculty2Repository.cs" />
     <Compile Include="Core\Repositories\IFacultyCourseRepository.cs" />
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
+    <Compile Include="Core\Repositories\IStudentDnevnikRepository.cs" />
+    <Compile Include="Core\Repositories\IStudentPraksaRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
     <Compile Include="Core\Repositories\IFacultySectorRepository.cs" />
@@ -317,6 +322,8 @@
     <Compile Include="Core\ViewModel\PersonDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\MentorFormViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentDetailViewModel.cs" />
+    <Compile Include="Core\ViewModel\StudentDnevnikDetailViewModel.cs" />
+    <Compile Include="Core\ViewModel\StudentDnevnikFormViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\ProfesorDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\ValidDate.cs" />
@@ -370,6 +377,8 @@
     <Compile Include="Persistence\EntityConfigurations\ProfesorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\StudentConfiguration .cs" />
+    <Compile Include="Persistence\EntityConfigurations\StudentDnevnikConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\StudentPraksaConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\YearOfStudyConfiguration.cs" />
     <Compile Include="Persistence\Repositories\ApplicationUserRepository.cs" />
     <Compile Include="Persistence\Repositories\AppointmentRepository.cs" />
@@ -388,6 +397,8 @@
     <Compile Include="Persistence\Repositories\PracticeTypeRespository.cs" />
     <Compile Include="Persistence\Repositories\ProfesorRepository.cs" />
     <Compile Include="Persistence\Repositories\SpecializationRepository.cs" />
+    <Compile Include="Persistence\Repositories\StudentDnevnikRepository.cs" />
+    <Compile Include="Persistence\Repositories\StudentPraksaRepository.cs" />
     <Compile Include="Persistence\Repositories\StudentRepository.cs" />
     <Compile Include="Persistence\Repositories\YearOfStudyRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -1241,6 +1252,10 @@
     <Content Include="Views\Students\StudentForm.cshtml" />
     <Content Include="Views\Account\StudentForm.cshtml" />
     <Content Include="Views\Account\MentorForm.cshtml" />
+    <Content Include="Views\StudentDnevnik\Index.cshtml" />
+    <Content Include="Views\StudentDnevnik\Details.cshtml" />
+    <Content Include="Views\StudentDnevnik\StudentDnevnikForm.cshtml" />
+    <Content Include="Views\StudentDnevnik\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

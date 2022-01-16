@@ -1,0 +1,77 @@
+﻿@model PracticeManagement.Core.ViewModel.StudentDnevnikFormViewModel
+@{ ViewBag.Title = "Add"; }
+<div class="row ">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="x_panel">
+            <div class="x_content">
+                @using (Html.BeginForm(Model.Action, "StudentDnevnik", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+                {
+    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+
+                                    <span class="section">Add Dnevnik</span>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Aktivnost<span class="required">*</span></label>
+                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                            @Html.TextAreaFor(m => m.aktivnost, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                            @Html.ValidationMessageFor(m => m.aktivnost)
+                                                        </div>
+                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Linkovi<span class="required">*</span></label>
+                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                            @Html.TextAreaFor(m => m.linkovi, new { @class = "form-control col-md-7 col-xs-12" })
+                                                                            @Html.ValidationMessageFor(m => m.linkovi)
+                                                                        </div>
+                                                                    </div>
+
+                                                                                    <div class="form-group">
+                                                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Dodatni Komentar<span class="required">*</span></label>
+                                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                            @Html.TextAreaFor(m => m.dodatno, new { @class = "form-control col-md-7 col-xs-12" })
+                                                                                            @Html.ValidationMessageFor(m => m.dodatno)
+                                                                                        </div>
+                                                                                    </div>
+                                                                                                    <div class="form-group">
+                                                                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Komentar Mentor</label>
+                                                                                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                            @Html.TextAreaFor(m => m.komentar, new { @class = "form-control col-md-7 col-xs-12" })
+                                                                                                            @Html.ValidationMessageFor(m => m.komentar)
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                                    <div class="ln_solid"></div>
+                                                                                                                                    <div class="form-group">
+                                                                                                                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                                                                                                                            <button type="submit" class="btn btn-success">Save</button>
+                                                                                                                                        </div>
+                                                                                                                                    </div>}
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+
+            $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy',
+                //clearBtn: true,
+                todayHighlight: true,
+                //todayBtn: true,
+                //todayBtn: 'linked',
+                orientation: "top left",
+                autoclose: true
+            });
+
+        });
+    </script>
+
+}
+
+
+
+
+

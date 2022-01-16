@@ -1,0 +1,66 @@
+﻿
+@using PracticeManagement.Core.Models
+@model PracticeManagement.Core.ViewModel.StudentDnevnikDetailViewModel
+@{ /**/
+    ViewBag.Title = "Details"; }
+<!-- load partial here-->
+<div id="MyModal" class="modal fade in">
+    <div class="modal-dialog " style="width: 900px;">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Detalji dnevnika stručne prakse</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel
+            <div class="x_content">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left ">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar -->
+                            <img class="img-responsive avatar-view" src="~/Content/images/Building200.png">
+                        </div>
+                    </div>
+                    <h3>Pregled dnevnika za datum: @(Model.studentDnevnik.datum.ToString("d"))</h3>
+                    <ul class="list-unstyled user_data">
+                        <li> <i class="fa fa-leanpub"><strong>Aktivnosti:</strong>@Model.studentDnevnik.aktivnost</i></li>
+                        <li> <i class="fa fa-leanpub"><strong>Linkovi:</strong>@Model.studentDnevnik.linkovi</i></li>
+                        <li> <i class="fa fa-leanpub"><strong>Komentar Student:</strong>@Model.studentDnevnik.dodatno</i></li>
+                        <li> <i class="fa fa-leanpub"><strong>Komentar Mentor:</strong>@Model.studentDnevnik.komentar</i></li>
+                    </ul>
+                    <a href="@Url.Action("Index","StudentDnevnik")" class="btn btn-default">Back</a>
+                    <br />
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTables').DataTable({
+                "scrollY": "300px",
+                "scrollCollapse": true,
+                "paging": false,
+                "filter": false,
+                "info": false
+            });</script>
+
+}
+
+
+
+
+

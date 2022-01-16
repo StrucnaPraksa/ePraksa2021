@@ -33,10 +33,13 @@ namespace PracticeManagement.Persistence
         public DbSet<Firm> Firms { get; set; }
         public DbSet<Core.Models.FirmAddress> FirmAddresses { get; set; }
         public DbSet<FirmType> FirmTypes { get; set; }
-		
-		//public DbSet<Poll> Polls { get; set; }
-  //      public DbSet<PollQuestion> PollQuestions { get; set; }
-		
+
+        //public DbSet<Poll> Polls { get; set; }
+        //      public DbSet<PollQuestion> PollQuestions { get; set; }
+
+        public DbSet<StudentPraksa> StudentPraksas { get; set; }
+        public DbSet<StudentDnevnik> StudentDnevniks { get; set; }
+
         public ApplicationDbContext()
             : base("StrucnaPraksa", throwIfV1Schema: false)
         {
@@ -68,6 +71,9 @@ namespace PracticeManagement.Persistence
             //modelBuilder.Configurations.Add(new StudentRatingConfiguration());
             modelBuilder.Configurations.Add(new FacultyCourseConfiguration());
             modelBuilder.Configurations.Add(new YearOfStudyConfiguration());
+
+            modelBuilder.Configurations.Add(new StudentPraksaConfiguration());
+            modelBuilder.Configurations.Add(new StudentDnevnikConfiguration());
 
             // modelBuilder.Entity<Faculty2>().ToTable("Faculties");
             //modelBuilder.Configurations.Add(new PatientStatusConfiguration());
