@@ -1,0 +1,65 @@
+﻿@model PracticeManagement.Core.ViewModel.PracticeBreakDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+<div id="MyModal" class="modal fade in">
+    <div class="modal-dialog " style="width: 900px;">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Detalji pauze</h3>
+    </div>
+</div>
+<br />
+<br />
+@using (Html.BeginForm("Save", "PracticeBreaks", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.PracticeBreak.Id)
+    @Html.HiddenFor(x => x.PracticeBreak.PracticeAttendanceId)
+    @Html.HiddenFor(x => x.PracticeBreak.PracticeAttendance.StudentId)
+    <div class="row">
+        <div class="col-lg-2">Date: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeBreak.PracticeAttendance.Date, "{0:yyyy-MM-dd}", new { type = "date" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">Vrijeme dolaska: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeBreak.TimeStart, "{0:hh:mm}", new { type = "time" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">Vrijeme odlaska: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeBreak.TimeEnd, "{0:hh:mm}", new { type = "time" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="submit" value="Spremi" class="btn btn-primary">
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTables').DataTable({
+                "scrollY": "300px",
+                "scrollCollapse": true,
+                "paging": false,
+                "filter": false,
+                "info": false
+            });
+    </script>
+}

@@ -3,6 +3,7 @@ using PracticeManagement.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,16 +36,23 @@ namespace PracticeManagement.Persistence.Repositories
 
         public PracticeBreak GetPracticeBreak(int id)
         {
-            return _context.PracticeBreaks.Find(id);
+            return _context.PracticeBreaks.Include(x => x.PracticeAttendance).First(x => x.Id == id);
         }
 
         public IEnumerable<PracticeBreak> GetPracticeBreaks()
         {
-            return _context.PracticeBreaks;
+            return _context.PracticeBreaks.Include(x => x.PracticeAttendance).ToList();
         }
 
         public void UpdatePracticeBreak(PracticeBreak practiceBreak)
         {
+            var exists = _context.PracticeBreaks.Any(x => x.Id == practiceBreak.Id);
+            if (!exists)
+            {
+                AddPracticeBreak(practiceBreak);
+                return;
+            }
+
             var entity = _context.PracticeBreaks.Find(practiceBreak.Id);
 
             entity.PracticeAttendanceId = practiceBreak.PracticeAttendanceId;

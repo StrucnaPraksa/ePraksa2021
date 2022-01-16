@@ -1,0 +1,77 @@
+﻿@model PracticeManagement.Core.ViewModel.PracticeAttendanceDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+<div id="MyModal" class="modal fade in">
+    <div class="modal-dialog " style="width: 900px;">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Detalji prisutnosti</h3>
+    </div>
+</div>
+<br />
+<br />
+@using (Html.BeginForm("Save", "PracticeAttendances", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.PracticeAttendance.Id)
+    @Html.HiddenFor(x => x.PracticeAttendance.StudentId)
+    <div class="row">
+        <div class="col-lg-2">Date: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeAttendance.Date, "{0:yyyy-MM-dd}", new { type = "date" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">Vrijeme dolaska: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeAttendance.TimeStart, "{0:hh:mm}", new { type = "time" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">Vrijeme odlaska: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeAttendance.TimeEnd, "{0:hh:mm}", new { type = "time" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-2">Potvrda mentora: </div>
+        <div class="col-lg-10">
+            @Html.TextBoxFor(x => x.PracticeAttendance.MentorConfirmation, new { type = "checkbox" })
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="submit" value="Spremi" class="btn btn-primary">
+        </div>
+        <div class="col-lg-6">
+            <a href="@Url.Action("PracticeBreak", "PracticeAttendances", new {id = Model.PracticeAttendance.Id})"
+               class="btn btn-info">
+                Pauza
+            </a>
+        </div>
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTables').DataTable({
+                "scrollY": "300px",
+                "scrollCollapse": true,
+                "paging": false,
+                "filter": false,
+                "info": false
+            });</script>
+
+}
