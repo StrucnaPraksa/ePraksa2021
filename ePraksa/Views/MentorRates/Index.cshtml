@@ -1,0 +1,111 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.MentorRate>
+@{
+                /**/
+
+                ViewBag.Title = "MentorRates";
+}
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>MentorRates</h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table id="MentorRates" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        @*<th>Id</th>*@
+                        @*<th>MentorsID</th>*@
+                        <th>Full Name</th>
+                        <th>Title</th>
+                        <th>Occupation</th>
+                        <th>Address</th>
+                        <th>Firm</th>
+                        <th>YearsOfExperience</th>
+                        <th>Rate</th>
+                        <th>Internship</th>
+                        <th>Student who rated</th>
+                        <th>Add Rate</th>
+                        <th>Edit Rate</th>
+                        <th>Activated</th>
+                        <th>Delete Rate</th>
+
+                        @*   <th><a href="@Url.Action("Create","MentorRates")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>*@
+                        @*  <th><a href="@Url.Action("RegisterMentor","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+
+                        
+                        @*<td>@item.Mentors.Id</td>*@
+                        <td>@item.Mentors.Name</td>
+                        <td>@item.Mentors.Title</td>
+                        <td>@item.Mentors.Occupation</td>
+                        <td>@item.Mentors.Address</td>
+                        <td>@item.Mentors.Firm.Name</td>
+                        <td>@item.Mentors.YearsOfExperience</td>
+                        <td>@item.Rate</td>
+                        <td>@item.Internships.Description</td>
+                        <td>@item.Students.Firstname</td>
+                        
+                           
+                          <td><a href="@Url.Action("RegisterMentorRate","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></td>
+                          <td>
+                              <a href="@Url.Action("Edit","MentorRates", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
+                          </td>        
+                       @* <a href="@Url.Action("Edit","MentorRates", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>*@
+                         <td> 
+                     <button class="btn btn-default btn-xs js-toggle" data-mentorRate-id="@item.Id"><i class="fa fa-folder"></i>@(item.Activated ? "Deactivate" : "Activate")</button>
+                           </td>     
+                             
+                            <td> <button class="btn btn-danger btn-xs js-delete" data-mentorRate-id="@item.Id"><i class="fa fa-trash-o"></i>Delete</button>
+                        </td>
+                    </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @section scripts{
+        <script>
+            $(document).ready(function () {
+                var table = $('#MentorRates').DataTable();
+
+                $("#MentorRates").on("click", ".js-delete", function () {
+                    var button = $(this);
+
+                    bootbox.confirm("Are you sure you want to delete this rate?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/MentorRates/delete/" + button.attr("data-mentorRate-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    table.row(button.parents("tr")).remove().draw();
+                                }
+                            });
+                        }
+                    });
+                });
+
+                $("#MentorRates").on("click", ".js-toggle", function () {
+                    var button = $(this);
+                    bootbox.confirm("Change the status of this rate?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/MentorRates/togglestatus/" + button.attr("data-mentorRate-id"),
+                                method: "POST",
+                                success: function () {
+                                    location.reload();
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    }

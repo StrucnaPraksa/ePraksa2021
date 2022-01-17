@@ -268,8 +268,11 @@
     <Compile Include="Controllers\Faculties2Controller.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\FirmsController.cs" />
+    <Compile Include="Controllers\PollMentorAnswersController.cs" />
+    <Compile Include="Controllers\MentorRatesController.cs" />
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\StudentRatesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Core\Dto\Faculty2Dto.cs" />
     <Compile Include="Core\Dto\FacultyTypeDto.cs" />
@@ -282,6 +285,10 @@
     <Compile Include="Core\Models\FacultyCourse.cs" />
     <Compile Include="Core\Models\FirmAddress.cs" />
     <Compile Include="Core\Models\FirmType.cs" />
+    <Compile Include="Core\Models\Internship.cs" />
+    <Compile Include="Core\Models\MentorRate.cs" />
+    <Compile Include="Core\Models\PollMentorAnswer.cs" />
+    <Compile Include="Core\Models\StudentRate.cs" />
     <Compile Include="Core\Models\Student.cs" />
     <Compile Include="Core\Models\Mentor.cs" />
     <Compile Include="Core\Models\RatingType.cs" />
@@ -295,7 +302,11 @@
     <Compile Include="Core\Repositories\IFacultyCourseRepository.cs" />
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
+    <Compile Include="Core\Repositories\IInternshipRepositorycs.cs" />
+    <Compile Include="Core\Repositories\IPollMentorAnswerRepository.cs" />
+    <Compile Include="Core\Repositories\IMentorRateRepository.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
+    <Compile Include="Core\Repositories\IStudentRateRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
     <Compile Include="Core\Repositories\IFacultySectorRepository.cs" />
@@ -313,10 +324,13 @@
     <Compile Include="Core\ViewModel\AppointmentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\FacultyDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\FirmFormViewModel.cs" />
+    <Compile Include="Core\ViewModel\MentorAnswerViewModel.cs" />
+    <Compile Include="Core\ViewModel\MentorRateFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\MentorFormViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentDetailViewModel.cs" />
+    <Compile Include="Core\ViewModel\StudentRateFormViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\ProfesorDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\ValidDate.cs" />
@@ -363,12 +377,15 @@
     <Compile Include="Persistence\EntityConfigurations\FirmConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\FirmTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MentorConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PollMentorAnswerConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\MentorRateConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientStatusConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PersonConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PracticeTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ProfesorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\StudentRateConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\StudentConfiguration .cs" />
     <Compile Include="Persistence\EntityConfigurations\YearOfStudyConfiguration.cs" />
     <Compile Include="Persistence\Repositories\ApplicationUserRepository.cs" />
@@ -382,12 +399,16 @@
     <Compile Include="Persistence\Repositories\FacultyTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\InternshipRepository.cs" />
+    <Compile Include="Persistence\Repositories\PollMentorAnswerRepository.cs" />
+    <Compile Include="Persistence\Repositories\MentorRateRepository.cs" />
     <Compile Include="Persistence\Repositories\MentorRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRepository.cs" />
     <Compile Include="Persistence\Repositories\PracticeTypeRespository.cs" />
     <Compile Include="Persistence\Repositories\ProfesorRepository.cs" />
     <Compile Include="Persistence\Repositories\SpecializationRepository.cs" />
+    <Compile Include="Persistence\Repositories\StudentRateRepository.cs" />
     <Compile Include="Persistence\Repositories\StudentRepository.cs" />
     <Compile Include="Persistence\Repositories\YearOfStudyRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
@@ -1241,6 +1262,15 @@
     <Content Include="Views\Students\StudentForm.cshtml" />
     <Content Include="Views\Account\StudentForm.cshtml" />
     <Content Include="Views\Account\MentorForm.cshtml" />
+    <Content Include="Views\MentorRates\Index.cshtml" />
+    <Content Include="Views\StudentRates\Index.cshtml" />
+    <Content Include="Views\MentorRates\Edit.cshtml" />
+    <Content Include="Views\StudentRates\StudentRateForm.cshtml" />
+    <Content Include="Views\Account\StudentRateForm.cshtml" />
+    <Content Include="Views\PollMentorAnswers\Index.cshtml" />
+    <Content Include="Views\MentorRates\MentorRateForm.cshtml" />
+    <Content Include="Views\Account\MentorRateForm.cshtml" />
+    <Content Include="Views\StudentRates\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

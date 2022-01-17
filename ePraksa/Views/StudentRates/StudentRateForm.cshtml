@@ -1,0 +1,81 @@
+﻿@model PracticeManagement.Core.ViewModel.StudentRateFormViewModel
+
+<div class="row ">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="x_panel">
+            <div class="x_content">
+                <!--Model.Action-->
+                @using (Html.BeginForm(Model.Action, "StudentRates", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" })) {
+
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(m => m.Id)
+
+
+                    <span class="section">Add Student Rate</span>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Firstname <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.A1, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.A1)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Lastname <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.A2, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.A2)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.A3, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.A3)
+                        </div>
+                    </div>
+                    <div class=" form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">City <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.A4, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.A4)
+                        </div>
+                    </div>
+                    <div class=" form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Faculty <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.A5, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.A5)
+                        </div>
+                    </div>
+                    <div class=" form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Year <span class="required">*</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            @Html.TextBoxFor(m => m.Rate, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                            @Html.ValidationMessageFor(m => m.Rate)
+                        </div>
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                            <a href="@Url.Action("Index","StudentRates")" class="btn btn-default">Back</a>
+                            <button type="submit" class="btn btn-success">Save</button>
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+

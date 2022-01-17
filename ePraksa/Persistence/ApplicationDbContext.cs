@@ -2,6 +2,7 @@
 using PracticeManagement.Persistence.EntityConfigurations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
 
 namespace PracticeManagement.Persistence
 {
@@ -33,10 +34,15 @@ namespace PracticeManagement.Persistence
         public DbSet<Firm> Firms { get; set; }
         public DbSet<Core.Models.FirmAddress> FirmAddresses { get; set; }
         public DbSet<FirmType> FirmTypes { get; set; }
-		
-		//public DbSet<Poll> Polls { get; set; }
-  //      public DbSet<PollQuestion> PollQuestions { get; set; }
-		
+
+        //public DbSet<Poll> Polls { get; set; }
+        //      public DbSet<PollQuestion> PollQuestions { get; set; }
+
+        //zrinka
+        public DbSet<MentorRate> MentorRates { get; set; }
+        public DbSet<StudentRate> StudentRates { get; set; }
+        public DbSet<Internship> Internships { get; set; }
+        public DbSet<PollMentorAnswer> PollMentorAnswers { get; set; }
         public ApplicationDbContext()
             : base("StrucnaPraksa", throwIfV1Schema: false)
         {
@@ -68,6 +74,12 @@ namespace PracticeManagement.Persistence
             //modelBuilder.Configurations.Add(new StudentRatingConfiguration());
             modelBuilder.Configurations.Add(new FacultyCourseConfiguration());
             modelBuilder.Configurations.Add(new YearOfStudyConfiguration());
+
+            //zrinka
+            modelBuilder.Configurations.Add(new MentorRateConfiguration());
+            //modelBuilder.Configurations.Add(new StudentRateConfiguration());
+            modelBuilder.Configurations.Add(new StudentRateConfiguration());
+            modelBuilder.Configurations.Add(new PollMentorAnswerConfiguration());
 
             // modelBuilder.Entity<Faculty2>().ToTable("Faculties");
             //modelBuilder.Configurations.Add(new PatientStatusConfiguration());

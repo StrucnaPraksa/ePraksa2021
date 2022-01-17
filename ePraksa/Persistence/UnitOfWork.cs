@@ -33,7 +33,17 @@ namespace PracticeManagement.Persistence
         //public IPollRepository Polls { get; private set; }
         //      public IPollQuestionRepository PollQuestions { get; private set; }
         public IYearOfStudyRepository YearOfStudies { get; private set; }
+        //zrinka
+        public IMentorRateRepository MentorRates { get; private set; }
+        //zrinka
+        public IStudentRateRepository StudentRates { get; private set; }
+        public IPollMentorAnswerRepository PollMentorAnswers { get; private set; }
 
+        public IInternshipRepository Internships { get; private set; }
+        // public IPollStudentRepository PollStudents { get; private set; }
+
+        // damir-zrinka commented MentorRates = new MentorRateRepository(context);
+        //PollStudents = new PollStudentRepository(context);
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
@@ -53,7 +63,15 @@ namespace PracticeManagement.Persistence
             PracticeTypes = new PracticeTypeRepository(context);
             //RatingTypes = new RatingTypeRepository(context);
             Mentors = new MentorRepository(context);
+
+            // damir-zinka added
+            MentorRates = new MentorRateRepository(context);
+            StudentRates = new StudentRateRepository(context);
+            PollMentorAnswers = new PollMentorAnswerRepository(context);
+
+
             Students = new StudentRepository(context);
+            Internships = new InternshipRepository(context);
             //Internships = new InternshipRepository(context);
             //StudentInternships = new StudentInternshipRepository(context);
             //StudentRatings = new StudentRatingRepository(context);

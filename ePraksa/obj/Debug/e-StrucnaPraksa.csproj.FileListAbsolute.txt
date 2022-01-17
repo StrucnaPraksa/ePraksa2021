@@ -911,3 +911,205 @@ E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debu
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CopyComplete
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\PracticeManagement.dll
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\PracticeManagement.pdb
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\ApplicationInsights.config
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\csc.exe
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\vbc.exe
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\VBCSCompiler.exe
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\PracticeManagement.dll.config
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\PracticeManagement.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\PracticeManagement.pdb
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Antlr3.Runtime.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\AutoMapper.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Castle.Core.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\EntityFramework.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\EntityFramework.SqlServer.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Web.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.ApplicationInsights.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Newtonsoft.Json.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Extensions.Conventions.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.Common.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.Mvc.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.WebApi.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Owin.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Net.Http.Formatting.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Helpers.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Http.WebHost.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Mvc.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Optimization.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Razor.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Deployment.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Razor.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\WebActivatorEx.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\WebGrease.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Antlr3.Runtime.pdb
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\AutoMapper.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\EntityFramework.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\EntityFramework.SqlServer.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Web.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.ApplicationInsights.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Newtonsoft.Json.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Extensions.Conventions.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.Common.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.Mvc.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\Ninject.Web.WebApi.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Net.Http.Formatting.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Helpers.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Http.WebHost.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Mvc.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Optimization.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.Razor.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Deployment.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Razor.xml
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.AssemblyReference.cache
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CoreCompileInputs.cache
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CopyComplete
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\obj\Debug\PracticeManagement.dll
+C:\Users\zrink\Downloads\ePraksa2021-main (1)\ePraksa2021-main\ePraksa\obj\Debug\PracticeManagement.pdb
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\VBCSCompiler.exe
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\ApplicationInsights.config
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\csc.exe
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\vbc.exe
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\PracticeManagement.dll.config
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\PracticeManagement.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\PracticeManagement.pdb
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Antlr3.Runtime.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\AutoMapper.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Castle.Core.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\EntityFramework.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\EntityFramework.SqlServer.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Web.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.ApplicationInsights.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Newtonsoft.Json.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Extensions.Conventions.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.Common.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.Mvc.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.WebApi.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Owin.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Net.Http.Formatting.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Helpers.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Http.WebHost.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Mvc.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Optimization.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Razor.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Deployment.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Razor.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\WebActivatorEx.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\WebGrease.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Antlr3.Runtime.pdb
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\AutoMapper.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\EntityFramework.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\EntityFramework.SqlServer.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.Web.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.ApplicationInsights.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Newtonsoft.Json.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Extensions.Conventions.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.Common.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.Mvc.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\Ninject.Web.WebApi.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Net.Http.Formatting.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Helpers.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Http.WebHost.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Mvc.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Optimization.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.Razor.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Deployment.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\bin\System.Web.WebPages.Razor.xml
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CoreCompileInputs.cache
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CopyComplete
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\obj\Debug\PracticeManagement.dll
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\obj\Debug\PracticeManagement.pdb
+C:\Users\zrink\OneDrive\Desktop\ePraksa2021-main\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.AssemblyReference.cache
