@@ -45,7 +45,6 @@ namespace PracticeManagement.Core.ViewModel {
 
                 var action = (Id != 0) ? update : create;
                 return (action.Body as MethodCallExpression).Method.Name;
-
             }
         }
     }

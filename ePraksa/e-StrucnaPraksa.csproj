@@ -185,6 +185,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -197,6 +198,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -246,6 +248,7 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -268,12 +271,14 @@
     <Compile Include="Controllers\Faculties2Controller.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\FirmsController.cs" />
+    <Compile Include="Controllers\InternshipsController.cs" />
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Core\Dto\Faculty2Dto.cs" />
     <Compile Include="Core\Dto\FacultyTypeDto.cs" />
     <Compile Include="Core\Dto\FacultySectorDto.cs" />
+    <Compile Include="Core\Dto\InternshipDto.cs" />
     <Compile Include="Core\Dto\PersonDto.cs" />
     <Compile Include="Core\Dto\ProfesorDto.cs" />
     <Compile Include="Core\Dto\FacultyDto.cs" />
@@ -282,6 +287,7 @@
     <Compile Include="Core\Models\FacultyCourse.cs" />
     <Compile Include="Core\Models\FirmAddress.cs" />
     <Compile Include="Core\Models\FirmType.cs" />
+    <Compile Include="Core\Models\Internship.cs" />
     <Compile Include="Core\Models\Student.cs" />
     <Compile Include="Core\Models\Mentor.cs" />
     <Compile Include="Core\Models\RatingType.cs" />
@@ -295,6 +301,7 @@
     <Compile Include="Core\Repositories\IFacultyCourseRepository.cs" />
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
+    <Compile Include="Core\Repositories\IInternshipRepositorycs.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
@@ -313,6 +320,8 @@
     <Compile Include="Core\ViewModel\AppointmentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\FacultyDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\FirmFormViewModel.cs" />
+    <Compile Include="Core\ViewModel\InternshipDetailViewModel.cs" />
+    <Compile Include="Core\ViewModel\InternshipFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\MentorFormViewModel.cs" />
@@ -371,6 +380,7 @@
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\StudentConfiguration .cs" />
     <Compile Include="Persistence\EntityConfigurations\YearOfStudyConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\InternshipConfiguration.cs" />
     <Compile Include="Persistence\Repositories\ApplicationUserRepository.cs" />
     <Compile Include="Persistence\Repositories\AppointmentRepository.cs" />
     <Compile Include="Persistence\Repositories\AttendanceRepository.cs" />
@@ -382,6 +392,7 @@
     <Compile Include="Persistence\Repositories\FacultyTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\InternshipRepository.cs" />
     <Compile Include="Persistence\Repositories\MentorRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRepository.cs" />
@@ -1241,6 +1252,10 @@
     <Content Include="Views\Students\StudentForm.cshtml" />
     <Content Include="Views\Account\StudentForm.cshtml" />
     <Content Include="Views\Account\MentorForm.cshtml" />
+    <Content Include="Views\Internships\Index.cshtml" />
+    <Content Include="Views\Internships\Details.cshtml" />
+    <Content Include="Views\Internships\InternshipForm.cshtml" />
+    <Content Include="Views\Internships\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
