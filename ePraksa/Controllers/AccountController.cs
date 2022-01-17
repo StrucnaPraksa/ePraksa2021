@@ -262,8 +262,30 @@ namespace PracticeManagement.Controllers
                 FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses(),
                 Cities = _unitOfWork.Cities.GetCities(),
                 Faculties = _unitOfWork.Faculties.GetFaculties()
+                
             };
             return View("StudentForm", viewModel);
+        }
+        //zrinka
+        public ActionResult RegisterStudentRate()
+        {
+            var viewModel = new StudentRateFormViewModel()
+            {
+                //Specializations = _unitOfWork.Specializations.GetSpecializations()
+                //// Profesors = _ProfesorRepository.GetProfesor()
+                //YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies(),
+                //FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses(),
+                //Cities = _unitOfWork.Cities.GetCities(),
+                //Faculties = _unitOfWork.Faculties.GetFaculties(),
+                //Faculties = _unitOfWork.Faculties.GetFaculties(),
+                StudentRates = _unitOfWork.StudentRates.GetStudentRates(),
+                //PollMentorAnswers = _unitOfWork.PollMentorAnswers.GetPollMentorAnswers()
+                Mentors = _unitOfWork.Mentors.GetMentors(),
+                Students = _unitOfWork.Students.GetStudents(),
+                Internships = _unitOfWork.Internships.GetInternships(),
+                Cities = _unitOfWork.Cities.GetCities()
+            };
+            return View("StudentRateForm", viewModel);
         }
 
         /// <summary>
@@ -273,8 +295,8 @@ namespace PracticeManagement.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.ProfesorRoleName + "," + RoleName.AdministratorRoleName)]
-        public async Task<ActionResult> RegisterStudent(StudentFormViewModel viewModel)
+        //[Authorize(Roles = RoleName.ProfesorRoleName + "," + RoleName.AdministratorRoleName)]
+        public async Task<ActionResult> RegisterStudentRate(StudentRateFormViewModel viewModel)
         {
                                                                                
             if (ModelState.IsValid)
@@ -289,7 +311,7 @@ namespace PracticeManagement.Controllers
 
                 if (result.Succeeded)
                 {
-                    UserManager.AddToRole(user.Id, RoleName.StudentRoleName);
+                    //UserManager.AddToRole(user.Id, RoleName.StudentRoleName);
 
                     //if (!ModelState.IsValid)
                     //{
@@ -299,35 +321,123 @@ namespace PracticeManagement.Controllers
                     //    viewModel.Faculties = _unitOfWork.Faculties.GetFaculties();
                     //    return View("StudentForm", viewModel);
                     //}
-                    Student Student = new Student()
+                    StudentRate studentRate = new StudentRate()
                     {
-                        Firstname = viewModel.Firstname,
-                        Lastname = viewModel.Lastname,
-                        Email = viewModel.Email,
+                        Id = viewModel.Id,
+                        MentorsID = viewModel.MentorsID,
+                        A1 = viewModel.A1,
+                        A2 = viewModel.A2,
+                        A3 = viewModel.A3,
+                        A4 = viewModel.A4,
+                        A5 = viewModel.A5,
+                        Rate = viewModel.Rate,
                         Active = viewModel.Active,
-                        CityID = viewModel.City,
-                        FacultyID = viewModel.Faculty,
-                        FacultyCourseId = viewModel.FacultyCourse,
-                        YearOfStudyID = viewModel.YearOfStudy,
-                        CV = viewModel.CV
+                        StudentsID = viewModel.StudentsID
                     };
-                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, Student.Firstname));
-                    _unitOfWork.Students.Add(Student);
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, studentRate.Students.Firstname));
+                    _unitOfWork.StudentRates.Add(studentRate);
                     _unitOfWork.Complete();
-                    return RedirectToAction("Index", "Students");
+                    return RedirectToAction("Index", "StudentRates");
                 }
 
                 this.AddErrors(result);
             }
 
             // viewModel.Specializations = _unitOfWork.Specializations.GetSpecializations();
-            viewModel.Faculties = _unitOfWork.Faculties.GetFaculties();
-            viewModel.Cities = _unitOfWork.Cities.GetCities();
-            viewModel.FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses();
-            viewModel.YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies();
+           // viewModel.Faculties = _unitOfWork.Faculties.GetFaculties();
+          //  viewModel.Cities = _unitOfWork.Cities.GetCities();
+           // viewModel.FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses();
+           // viewModel.YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies();
 
             // If we got this far, something failed, redisplay form
-            return View("StudentForm", viewModel);
+            return View("StudentRateForm", viewModel);
+        }
+
+        //zrinka
+        public ActionResult RegisterMentorRate()
+        {
+            var viewModel = new MentorRateFormViewModel()
+            {
+                //Specializations = _unitOfWork.Specializations.GetSpecializations()
+                //// Profesors = _ProfesorRepository.GetProfesor()
+                //YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies(),
+                //FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses(),
+                //Cities = _unitOfWork.Cities.GetCities(),
+                //Faculties = _unitOfWork.Faculties.GetFaculties(),
+                //Faculties = _unitOfWork.Faculties.GetFaculties(),
+                //StudentRates = _unitOfWork.StudentRates.GetStudentRates(),
+                MentorRates = _unitOfWork.MentorRates.GetMentorRates(),
+                Mentors = _unitOfWork.Mentors.GetMentors(),
+                Students = _unitOfWork.Students.GetStudents(),
+                Internships = _unitOfWork.Internships.GetInternships()
+                //PollMentorAnswers = _unitOfWork.PollMentorAnswers.GetPollMentorAnswers()
+            };
+            return View("MentorRateForm", viewModel);
+        }
+
+        /// <summary>
+        /// Registriraj novog studenta i dodaj ga u rolu student
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles = RoleName.ProfesorRoleName + "," + RoleName.AdministratorRoleName)]
+        public async Task<ActionResult> RegisterMentorRate(MentorRateFormViewModel viewModel)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser()
+                {
+                    UserName = viewModel.RegisterViewModel.Email,
+                    Email = viewModel.RegisterViewModel.Email,
+                    IsActive = true
+                };
+                var result = await UserManager.CreateAsync(user, viewModel.RegisterViewModel.Password);
+
+                if (result.Succeeded)
+                {
+                    //UserManager.AddToRole(user.Id, RoleName.StudentRoleName);
+
+                    //if (!ModelState.IsValid)
+                    //{
+                    //    viewModel.YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies();
+                    //    viewModel.FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses();
+                    //    viewModel.Cities = _unitOfWork.Cities.GetCities();
+                    //    viewModel.Faculties = _unitOfWork.Faculties.GetFaculties();
+                    //    return View("StudentForm", viewModel);
+                    //}
+                    MentorRate mentorRate = new MentorRate()
+                    {
+                        Id = viewModel.Id,
+                        MentorsID = viewModel.MentorsID,
+                        A1 = viewModel.A1,
+                        A2 = viewModel.A2,
+                        A3 = viewModel.A3,
+                        A4 = viewModel.A4,
+                        A5 = viewModel.A5,
+                        Rate = viewModel.Rate,
+                        Activated = viewModel.Activated,
+                        StudentsID = viewModel.StudentsID
+                    };
+                    UserManager.AddClaim(user.Id, new Claim(ClaimTypes.GivenName, mentorRate.Mentors.Name));
+                    _unitOfWork.MentorRates.Add(mentorRate);
+                    _unitOfWork.Complete();
+                    return RedirectToAction("Index", "MentorRates");
+                }
+
+                this.AddErrors(result);
+            }
+
+            // viewModel.Specializations = _unitOfWork.Specializations.GetSpecializations();
+            // viewModel.Faculties = _unitOfWork.Faculties.GetFaculties();
+            //  viewModel.Cities = _unitOfWork.Cities.GetCities();
+            // viewModel.FacultyCourses = _unitOfWork.FacultyCourses.GetFacultyCourses();
+            // viewModel.YearOfStudies = _unitOfWork.YearOfStudies.GetYearOfStudies();
+
+            // If we got this far, something failed, redisplay form
+            return View("MentorRateForm", viewModel);
         }
 
         //Mentor registration

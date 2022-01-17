@@ -1,0 +1,108 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.StudentRate>
+@{ ViewBag.Title = "StudentRates"; }
+
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>StudentRates</h3>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+            <table id="StudentRates" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>A1</th>
+                        <th>A2</th>
+                        <th>A3</th>
+                        <th>A4</th>
+                        <th>A5</th>
+                        <th>Rate</th>
+                        <th>Internship</th>
+                        <th>Mentors Name</th>
+                        <th>Active</th>
+                        <th>Add Rate</th>
+                        <th>Edit Rate</th>
+                        <th>Delete Rate</th>
+                        <th></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.Students.Firstname</td>
+                        <td>@item.Students.Lastname</td>
+                        <td>@item.A1</td>
+                        <td>@item.A2</td>
+                        <td>@item.A3</td>
+                        <td>@item.A4</td>
+                        <td>@item.A5</td>
+                        <td>@item.Rate</td>
+                        <td>@item.Internships.Description</td>
+                        <td>@item.Mentors.Name</td>
+
+                        <td>
+                            <button class="btn btn-default btn-xs js-toggle" data-studentRate-id="@item.Id"><i class="fa fa-folder"></i>@(item.Active ? "Deactivate" : "Activate")</button>
+                        </td>
+                        <td><a href="@Url.Action("RegisterStudentRate","Account")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></td>
+                        @*<td><a href="@Url.Action("Add","StudentRates", new { id = item.Students.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Add</a></td>*@
+                        <td>
+                            <a href="@Url.Action("Edit","StudentRates", new { id = item.Id})" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Edit</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-xs js-delete" data-studentRate-id="@item.Id"><i class="fa fa-trash-o"></i>Delete</button>
+                        </td>
+                        <td></td>
+                    </tr>
+}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $('#StudentRates').DataTable();
+
+            $("#StudentRates").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are you sure you want to delete this rate?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/StudentRates/delete/" + button.attr("data-studentRate-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+            $("#StudentRates").on("click", ".js-toggle", function () {
+                var button = $(this);
+                bootbox.confirm("Change the status of this rate?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/StudentRates/togglestatus/" + button.attr("data-studentRate-id"),
+                            method: "POST",
+                            success: function () {
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

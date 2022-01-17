@@ -34,7 +34,15 @@ namespace PracticeManagement.Core
         //IStudentRatingRepository StudentRatings { get; }
         IFacultyCourseRepository FacultyCourses { get; }
         //IMentorRepository Mentors { get; }
-      
+
+        //zrinka
+        IMentorRateRepository MentorRates { get; }
+        IInternshipRepository Internships { get; }
+        IStudentRateRepository StudentRates { get; }
+        IPollMentorAnswerRepository PollMentorAnswers { get; }
+        //IPollStudentRepository PollStudents { get; }
+
+
         //IPollRepository Polls { get; }
         //      IPollQuestionRepository PollQuestions{ get; }
         void Complete();

@@ -1,0 +1,73 @@
+﻿@model PracticeManagement.Core.ViewModel.MentorRateFormViewModel
+
+<div class="row ">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+
+        <div class="x_panel">
+            <div class="x_content">
+                <!--Model.Action-->
+                @using (Html.BeginForm(Model.Action, "MentorRates", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+                {
+
+            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.Id)
+
+
+                                            <span class="section">Add Mentor Rate</span>
+
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">A1 <span class="required">*</span></label>
+                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                    @Html.TextBoxFor(m => m.A1, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                    @Html.ValidationMessageFor(m => m.A1)
+                                                                </div>
+                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">A2 <span class="required">*</span></label>
+                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                    @Html.TextBoxFor(m => m.A2, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                    @Html.ValidationMessageFor(m => m.A2)
+                                                                                </div>
+                                                                            </div>
+                                                                                            <div class="form-group">
+                                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">A3 <span class="required">*</span></label>
+                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                    @Html.TextBoxFor(m => m.A3, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                                    @Html.ValidationMessageFor(m => m.A3)
+                                                                                                </div>
+                                                                                            </div>
+                                                                                                            <div class=" form-group">
+                                                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">A4 <span class="required">*</span></label>
+                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                    @Html.TextBoxFor(m => m.A4, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                                                    @Html.ValidationMessageFor(m => m.A4)
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                                            <div class=" form-group">
+                                                                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">A5 <span class="required">*</span></label>
+                                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                    @Html.TextBoxFor(m => m.A5, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                                                                    @Html.ValidationMessageFor(m => m.A5)
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                                            <div class=" form-group">
+                                                                                                                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Final Rate <span class="required">*</span></label>
+                                                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                                                                                    @Html.TextBoxFor(m => m.Rate, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                                                                                    @Html.ValidationMessageFor(m => m.Rate)
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                                            <div class="ln_solid"></div>
+                                                                                                                                                                            <div class="form-group">
+                                                                                                                                                                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                                                                                                                                                                    <a href="@Url.Action("Index","MentorRates")" class="btn btn-default">Back</a>
+                                                                                                                                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                                                                                                                                </div>
+                                                                                                                                                                            </div>}
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
