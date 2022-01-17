@@ -268,6 +268,7 @@
     <Compile Include="Controllers\Faculties2Controller.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\FirmsController.cs" />
+    <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -282,6 +283,8 @@
     <Compile Include="Core\Models\FacultyCourse.cs" />
     <Compile Include="Core\Models\FirmAddress.cs" />
     <Compile Include="Core\Models\FirmType.cs" />
+    <Compile Include="Core\Models\Grade.cs" />
+    <Compile Include="Core\Models\Internships.cs" />
     <Compile Include="Core\Models\Student.cs" />
     <Compile Include="Core\Models\Mentor.cs" />
     <Compile Include="Core\Models\RatingType.cs" />
@@ -295,6 +298,8 @@
     <Compile Include="Core\Repositories\IFacultyCourseRepository.cs" />
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
+    <Compile Include="Core\Repositories\IGradeRepository.cs" />
+    <Compile Include="Core\Repositories\IInternshipRepository.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
@@ -313,6 +318,8 @@
     <Compile Include="Core\ViewModel\AppointmentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\FacultyDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\FirmFormViewModel.cs" />
+    <Compile Include="Core\ViewModel\GradeDetailViewModel.cs" />
+    <Compile Include="Core\ViewModel\GradeFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\MentorFormViewModel.cs" />
@@ -362,6 +369,8 @@
     <Compile Include="Persistence\EntityConfigurations\FirmAddressConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\FirmConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\FirmTypeConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\GradeConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\InternshipConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\MentorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientStatusConfiguration.cs" />
@@ -382,6 +391,8 @@
     <Compile Include="Persistence\Repositories\FacultyTypeRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmRepository.cs" />
     <Compile Include="Persistence\Repositories\FirmTypeRepository.cs" />
+    <Compile Include="Persistence\Repositories\GradeRepository.cs" />
+    <Compile Include="Persistence\Repositories\InternshipRepository.cs" />
     <Compile Include="Persistence\Repositories\MentorRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRepository.cs" />
@@ -1241,6 +1252,10 @@
     <Content Include="Views\Students\StudentForm.cshtml" />
     <Content Include="Views\Account\StudentForm.cshtml" />
     <Content Include="Views\Account\MentorForm.cshtml" />
+    <Content Include="Views\Grades\Index.cshtml" />
+    <Content Include="Views\Grades\GradeForm.cshtml" />
+    <Content Include="Views\Grades\Edit.cshtml" />
+    <Content Include="Views\Grades\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

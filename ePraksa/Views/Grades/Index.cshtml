@@ -1,0 +1,91 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.Grade>
+@{
+    /**/
+
+    ViewBag.Title = "Grades";
+}
+<div class="col-md-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h3>Grades</h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <table id="grades" class=" data table table-striped no-margin">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Practice</th>
+                        <th>Profesor</th>
+                        <th>Mentor</th>
+                        <th>Student</th>
+                        <th>Firm</th>
+                        <th>Grade and Comments</th>
+
+                        @*   <th><a href="@Url.Action("Create","Mentors")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>*@
+                        <th><a href="@Url.Action("Create","Grades")" class="btn btn-primary"><i class="fa fa-edit"></i>Add</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Internships.Description</td>
+                            <td>@item.Profesors.Name</td>
+                            <td>@item.Mentors.Name</td>
+                            <td>@item.Students.Firstname</td>
+                            <td>@item.Firms.Name</td>
+                            <td><a href="@Url.Action("Details","Grades", new { id = item.Id})" class="btn btn-default"><i class="fa fa-folder"></i>Details</a></td>
+
+                            <td>
+                                <a href="@Url.Action("Edit", "Grades", new { id= item.Id})" class="btn btn-success btn-xs"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+                             
+                                <button class="btn btn-danger btn-xs js-delete" data-grade-id="@item.Id"><i class="fa fa-trash-o"></i>Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            var table = $('#grades').DataTable();
+
+            $("#grades").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Jeste li sigurni da želite izbrisati ocjenu?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/Grades/Delete/" + button.attr("data-grade-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+            $("#mentors").on("click", ".js-toggle", function () {
+                var button = $(this);
+                bootbox.confirm("Toggle the status of this mentor?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/mentors/togglestatus/" + button.attr("data-mentor-id"),
+                            method: "POST",
+                            success: function () {
+                                location.reload();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

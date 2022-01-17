@@ -29,10 +29,11 @@ namespace PracticeManagement.Core
         IMentorRepository Mentors { get; }
         IStudentRepository Students { get; }
         IYearOfStudyRepository YearOfStudies { get; }
-        //IInternshipRepository Internships { get; }
+        IInternshipRepository Internships { get; }
         //IStudentInternshipRepository StudentInternships { get; }
         //IStudentRatingRepository StudentRatings { get; }
         IFacultyCourseRepository FacultyCourses { get; }
+        IGradeRepository Grades { get; }
         //IMentorRepository Mentors { get; }
       
         //IPollRepository Polls { get; }
