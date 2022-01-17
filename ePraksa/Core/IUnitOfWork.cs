@@ -29,7 +29,10 @@ namespace PracticeManagement.Core
         IMentorRepository Mentors { get; }
         IStudentRepository Students { get; }
         IYearOfStudyRepository YearOfStudies { get; }
-        //IInternshipRepository Internships { get; }
+
+        // author: Grgo Jelavic - Internships interface
+        IInternshipRepository Internships { get; }
+
         //IStudentInternshipRepository StudentInternships { get; }
         //IStudentRatingRepository StudentRatings { get; }
         IFacultyCourseRepository FacultyCourses { get; }

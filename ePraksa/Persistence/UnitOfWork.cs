@@ -24,7 +24,10 @@ namespace PracticeManagement.Persistence
         //public IRatingTypeRepository RatingTypes { get; private set; }
         public IMentorRepository Mentors { get; private set; }
         public IStudentRepository Students { get; private set; }
-        //public IInternshipRepository Internships { get; private set; }
+
+        // author: Grgo Jelavic - Internships interface
+        public IInternshipRepository Internships { get; private set; }
+
         //public IStudentInternshipRepository StudentInternships { get; private set; }
         //public IStudentRatingRepository StudentRatings { get; private set; }
         public IFacultyCourseRepository FacultyCourses { get; private set; }
@@ -54,7 +57,10 @@ namespace PracticeManagement.Persistence
             //RatingTypes = new RatingTypeRepository(context);
             Mentors = new MentorRepository(context);
             Students = new StudentRepository(context);
-            //Internships = new InternshipRepository(context);
+
+            // author: Grgo Jelavic - creates Internships interface
+            Internships = new InternshipRepository(context);
+
             //StudentInternships = new StudentInternshipRepository(context);
             //StudentRatings = new StudentRatingRepository(context);
             FacultyCourses = new FacultyCourseRepository(context);

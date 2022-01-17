@@ -21,6 +21,10 @@ namespace PracticeManagement.App_Start
             //Mapper.CreateMap<FacultySector, FacultySectorDto>();
             Mapper.CreateMap<FacultyType, FacultyTypeDto>();
             //Mapper.CreateMap<ProfesorFormViewModel, Profesor>();
+
+            //author: Grgo Jelavic
+            Mapper.CreateMap<Internship, InternshipDto>();
+
         }
     }
 }

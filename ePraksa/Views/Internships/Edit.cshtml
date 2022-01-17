@@ -1,0 +1,96 @@
+﻿@model PracticeManagement.Core.ViewModel.InternshipFormViewModel
+@{
+    ViewBag.Title = "Edit Internship";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>Izmjena/ažuriranje stručne prakse </h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="form-horizontal form-label-left">
+                    @using (Html.BeginForm()) {
+                        @Html.HiddenFor(m => m.Id)
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Naziv stručne prakse  <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Name)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Opis stručne prakse</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Description, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Description)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Plan stručne prakse</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Plan, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Plan)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Kriteriji za stručnu praksu</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Criteria, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Criteria)
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Vrsta stručne prakse</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Type, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Type)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Veličina stručne prakse</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.Size, new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.Size)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Profesor  <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.DropDownListFor(m => m.Profesor, new SelectList(Model.Profesors, "Id", "Name"), "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Profesor)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Godina studija  <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.DropDownListFor(m => m.YearOfStudy, new SelectList(Model.YearOfStudies, "Id", "Year"), "", new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.YearOfStudy)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-3 col-xs-12">Smjer obrazovanja  <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.DropDownListFor(m => m.FacultyCourse, new SelectList(Model.FacultyCourses, "Id", "Course"), "", new { @class = "form-control col-md-7 col-xs-12" })
+                                @Html.ValidationMessageFor(m => m.FacultyCourse)
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                <a href="@Url.Action("Details","Internships", new{id =Model.Id})" class="btn btn-default">Back</a>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

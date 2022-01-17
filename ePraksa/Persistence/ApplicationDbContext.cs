@@ -25,7 +25,10 @@ namespace PracticeManagement.Persistence
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<YearOfStudy> YearOfStudies { get; set; }
-        //public DbSet<Internship> Internships { get; set; }
+
+        // author: Grgo Jelavic - takes instance of modelBuilder as a parameter
+        public DbSet<Internship> Internships { get; set; }
+
         //public DbSet<StudentInternship> StudentInternships { get; set; }
         //public DbSet<StudentRating> StudentRatings { get; set; }
         public DbSet<FacultyCourse> FacultyCourses { get; set; }
@@ -63,7 +66,10 @@ namespace PracticeManagement.Persistence
             //modelBuilder.Configurations.Add(new RatingTypeConfiguration());
             modelBuilder.Configurations.Add(new MentorConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-            //modelBuilder.Configurations.Add(new InternshipConfiguration());
+
+            // author: Grgo Jelavic - takes instance of modelBuilder as a parameter
+            modelBuilder.Configurations.Add(new InternshipConfiguration());
+            
             //modelBuilder.Configurations.Add(new StudentInternshipConfiguration());
             //modelBuilder.Configurations.Add(new StudentRatingConfiguration());
             modelBuilder.Configurations.Add(new FacultyCourseConfiguration());

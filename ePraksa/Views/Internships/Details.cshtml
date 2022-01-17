@@ -1,0 +1,74 @@
+﻿
+@using PracticeManagement.Core.Models
+@model PracticeManagement.Core.ViewModel.InternshipDetailViewModel
+@{ /**/
+    ViewBag.Title = "Details"; }
+<!-- load partial here-->
+<div id="MyModal" class="modal fade in">
+    <div class="modal-dialog " style="width: 900px;">
+        <div class="modal-content">
+            <div id="MyModalContent"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Detalji stručne prakse</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel
+            <div class="x_content">
+                <div class="col-md-3 col-sm-3 col-xs-12 profile_left ">
+                    <div class="profile_img">
+                        <div id="crop-avatar">
+                            <!-- Current avatar -->
+                            <img class="img-responsive avatar-view" src="~/Content/images/Building200.png">
+                        </div>
+                    </div>
+                    <h3>@(Model.Internship.Name)</h3>
+                    <ul class="list-unstyled user_data">
+                        <li> <i class="fa fa-list-ol"><strong>   Id stručne prakse:</strong> @Model.Internship.Id</i></li>
+                        <li> <i class="fa fa-leanpub"><strong>   Naziv stručne prakse:</strong> @Model.Internship.Name</i></li>
+                        <li> <i class="fa fa-info-circle"><strong>   Opis stručne prakse:</strong> @Model.Internship.Description</i></li>
+                        <li> <i class="fa fa-map-marker"><strong>   Plan:</strong> @Model.Internship.Plan</i></li>
+                        <li> <i class="fa fa-graduation-cap"><strong>   Kriteriji:</strong> @Model.Internship.Criteria</i></li>
+                        <li> <i class="fa fa-briefcase"><strong>   Vrsta:</strong> @Model.Internship.Type</i></li>
+                        <li> <i class="fa fa-clock-o"><strong>   Veličina:</strong> @Model.Internship.Size</i></li>
+                        <li> <i class="fa fa-male"><strong>   Profesor:</strong> @Model.Internship.Profesors.Name</i></li>
+                        <li> <i class="fa fa-calendar-o"><strong>   Godina studija:</strong> @Model.Internship.YearOfStudies.Year</i></li>
+                        <li> <i class="fa fa-arrow-circle-o-up"><strong>   Smjer obrazovanja:</strong> @Model.Internship.FacultyCourses.Course</i></li>
+
+                    </ul>
+                    <a href="@Url.Action("Edit", "Internships", new { id= Model.Internship.Id})" class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit</a>
+                    <a href="@Url.Action("Index","Internships")" class="btn btn-default">Back</a>
+                    <br />
+                </div>
+            </div>
+            </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTables').DataTable({
+                "scrollY": "300px",
+                "scrollCollapse": true,
+                "paging": false,
+                "filter": false,
+                "info": false
+            });</script>
+
+}
+
+
+
+
+
