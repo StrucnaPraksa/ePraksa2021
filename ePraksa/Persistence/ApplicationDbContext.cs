@@ -25,7 +25,9 @@ namespace PracticeManagement.Persistence
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<YearOfStudy> YearOfStudies { get; set; }
-        //public DbSet<Internship> Internships { get; set; }
+        
+        
+        public DbSet<Internship> Internships { get; set; }
         //public DbSet<StudentInternship> StudentInternships { get; set; }
         //public DbSet<StudentRating> StudentRatings { get; set; }
         public DbSet<FacultyCourse> FacultyCourses { get; set; }
@@ -33,6 +35,8 @@ namespace PracticeManagement.Persistence
         public DbSet<Firm> Firms { get; set; }
         public DbSet<Core.Models.FirmAddress> FirmAddresses { get; set; }
         public DbSet<FirmType> FirmTypes { get; set; }
+
+        public DbSet<Grade> Grades { get; set; }
 		
 		//public DbSet<Poll> Polls { get; set; }
   //      public DbSet<PollQuestion> PollQuestions { get; set; }
@@ -63,11 +67,13 @@ namespace PracticeManagement.Persistence
             //modelBuilder.Configurations.Add(new RatingTypeConfiguration());
             modelBuilder.Configurations.Add(new MentorConfiguration());
             modelBuilder.Configurations.Add(new StudentConfiguration());
-            //modelBuilder.Configurations.Add(new InternshipConfiguration());
+            modelBuilder.Configurations.Add(new InternshipConfiguration());
             //modelBuilder.Configurations.Add(new StudentInternshipConfiguration());
             //modelBuilder.Configurations.Add(new StudentRatingConfiguration());
             modelBuilder.Configurations.Add(new FacultyCourseConfiguration());
             modelBuilder.Configurations.Add(new YearOfStudyConfiguration());
+            modelBuilder.Configurations.Add(new GradeConfiguration());
+
 
             // modelBuilder.Entity<Faculty2>().ToTable("Faculties");
             //modelBuilder.Configurations.Add(new PatientStatusConfiguration());

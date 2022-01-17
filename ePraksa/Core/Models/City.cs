@@ -1,4 +1,6 @@
-﻿namespace PracticeManagement.Core.Models
+﻿
+
+namespace PracticeManagement.Core.Models
 {
     public class City
     {

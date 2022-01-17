@@ -1,0 +1,89 @@
+﻿@model PracticeManagement.Core.ViewModel.GradeFormViewModel
+@{
+    ViewBag.Title = "Edit Grade";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h3>Izmjena/ažuriranje ocjena i komentara </h3>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="form-horizontal form-label-left">
+                    @using (Html.BeginForm("Edit", "Grades", FormMethod.Post, new { @class = "form-horizontal form-label-left", autocomplete = "off" }))
+                    {
+
+                @Html.ValidationSummary(true)
+                                @Html.AntiForgeryToken()
+
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profesor Grade : Attendance <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.PGrade1, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.PGrade1)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profesor Grade : Commitment <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.PGrade2, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.PGrade2)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profesor Grade : Knowledge <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.PGrade3, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.PGrade3)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mentor Grade : Attendance <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.MGrade1, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.MGrade1)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mentor Grade : Commitment <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.MGrade2, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.MGrade2)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mentor Grade : Knowledge <span class="required">*</span></label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        @Html.TextBoxFor(m => m.MGrade3, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.MGrade3)
+                                                    </div>
+                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Profesor Comment<span class="required">*</span></label>
+                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                        @Html.TextBoxFor(m => m.ProfesorComment, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                        @Html.ValidationMessageFor(m => m.ProfesorComment)
+                                                                    </div>
+                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mentor Comment<span class="required">*</span></label>
+                                                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                                                        @Html.TextBoxFor(m => m.MentorComment, new { @class = "form-control col-md-7 col-xs-12", autofocus = "true" })
+                                                                                        @Html.ValidationMessageFor(m => m.MentorComment)
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                                <div class="form-group">
+                                                                                                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
+                                                                                                        <a href="@Url.Action("Index","Grades")" class="btn btn-default">Back</a>
+                                                                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                                                                    </div>
+                                                                                                </div>}
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

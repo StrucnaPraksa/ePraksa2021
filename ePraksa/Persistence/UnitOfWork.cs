@@ -24,7 +24,7 @@ namespace PracticeManagement.Persistence
         //public IRatingTypeRepository RatingTypes { get; private set; }
         public IMentorRepository Mentors { get; private set; }
         public IStudentRepository Students { get; private set; }
-        //public IInternshipRepository Internships { get; private set; }
+        public IInternshipRepository Internships { get; private set; }
         //public IStudentInternshipRepository StudentInternships { get; private set; }
         //public IStudentRatingRepository StudentRatings { get; private set; }
         public IFacultyCourseRepository FacultyCourses { get; private set; }
@@ -33,6 +33,8 @@ namespace PracticeManagement.Persistence
         //public IPollRepository Polls { get; private set; }
         //      public IPollQuestionRepository PollQuestions { get; private set; }
         public IYearOfStudyRepository YearOfStudies { get; private set; }
+
+        public IGradeRepository Grades { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -54,7 +56,7 @@ namespace PracticeManagement.Persistence
             //RatingTypes = new RatingTypeRepository(context);
             Mentors = new MentorRepository(context);
             Students = new StudentRepository(context);
-            //Internships = new InternshipRepository(context);
+            Internships = new InternshipRepository(context);
             //StudentInternships = new StudentInternshipRepository(context);
             //StudentRatings = new StudentRatingRepository(context);
             FacultyCourses = new FacultyCourseRepository(context);
@@ -63,6 +65,7 @@ namespace PracticeManagement.Persistence
             //Polls = new PollRepository(context);
             //         PollQuestions = new PollQuestionRepository(context);
             YearOfStudies = new YearOfStudyRepository(context);
+            Grades = new GradeRepository(context);
         }
 
         public void Complete()
