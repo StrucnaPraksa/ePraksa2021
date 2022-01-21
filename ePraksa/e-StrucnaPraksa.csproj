@@ -270,6 +270,8 @@
     <Compile Include="Controllers\FirmsController.cs" />
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
+    <Compile Include="Controllers\PracticeAttendancesController.cs" />
+    <Compile Include="Controllers\PracticeBreaksController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Core\Dto\Faculty2Dto.cs" />
     <Compile Include="Core\Dto\FacultyTypeDto.cs" />
@@ -277,11 +279,14 @@
     <Compile Include="Core\Dto\PersonDto.cs" />
     <Compile Include="Core\Dto\ProfesorDto.cs" />
     <Compile Include="Core\Dto\FacultyDto.cs" />
+    <Compile Include="Core\Helpers\Range.cs" />
     <Compile Include="Core\Models\Firm.cs" />
     <Compile Include="Core\Models\Faculty2.cs" />
     <Compile Include="Core\Models\FacultyCourse.cs" />
     <Compile Include="Core\Models\FirmAddress.cs" />
     <Compile Include="Core\Models\FirmType.cs" />
+    <Compile Include="Core\Models\PracticeAttendance.cs" />
+    <Compile Include="Core\Models\PracticeBreak.cs" />
     <Compile Include="Core\Models\Student.cs" />
     <Compile Include="Core\Models\Mentor.cs" />
     <Compile Include="Core\Models\RatingType.cs" />
@@ -296,6 +301,8 @@
     <Compile Include="Core\Repositories\IFirmRepository.cs" />
     <Compile Include="Core\Repositories\IFirmTypeRepository.cs" />
     <Compile Include="Core\Repositories\IMentorRepository.cs" />
+    <Compile Include="Core\Repositories\IPracticeAttendanceRepository.cs" />
+    <Compile Include="Core\Repositories\IPracticeBreakRepository.cs" />
     <Compile Include="Core\Repositories\IStudentRepository.cs" />
     <Compile Include="Core\Repositories\IFacultyTypeRepository.cs" />
     <Compile Include="Core\Repositories\IFacultySectorRepository.cs" />
@@ -316,6 +323,9 @@
     <Compile Include="Core\ViewModel\PersonFormViewModel.cs" />
     <Compile Include="Core\ViewModel\PersonDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\MentorFormViewModel.cs" />
+    <Compile Include="Core\ViewModel\PracticeAttendanceDetailsViewModel.cs" />
+    <Compile Include="Core\ViewModel\PracticeBreakDetailsViewModel.cs" />
+    <Compile Include="Core\ViewModel\PracticeBreakIndexViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\ProfesorDetailViewModel.cs" />
@@ -366,6 +376,8 @@
     <Compile Include="Persistence\EntityConfigurations\PatientConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PatientStatusConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PersonConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PracticeAttendanceConfiguration.cs" />
+    <Compile Include="Persistence\EntityConfigurations\PracticeBreakConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\PracticeTypeConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\ProfesorConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\SpecializationConfiguration.cs" />
@@ -385,6 +397,8 @@
     <Compile Include="Persistence\Repositories\MentorRepository.cs" />
     <Compile Include="Persistence\Repositories\PatientRepository.cs" />
     <Compile Include="Persistence\Repositories\PersonRepository.cs" />
+    <Compile Include="Persistence\Repositories\PracticeAttendanceRepository.cs" />
+    <Compile Include="Persistence\Repositories\PracticeBreakRepository.cs" />
     <Compile Include="Persistence\Repositories\PracticeTypeRespository.cs" />
     <Compile Include="Persistence\Repositories\ProfesorRepository.cs" />
     <Compile Include="Persistence\Repositories\SpecializationRepository.cs" />
@@ -1241,6 +1255,10 @@
     <Content Include="Views\Students\StudentForm.cshtml" />
     <Content Include="Views\Account\StudentForm.cshtml" />
     <Content Include="Views\Account\MentorForm.cshtml" />
+    <Content Include="Views\PracticeAttendances\Index.cshtml" />
+    <Content Include="Views\PracticeAttendances\Details.cshtml" />
+    <Content Include="Views\PracticeBreaks\Details.cshtml" />
+    <Content Include="Views\PracticeBreaks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PracticeManagement.Core.Models.PracticeAttendance>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table id="PracticeAttendance" class="data table table-striped no-margin">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Vrijeme dolaska</th>
+                            <th>Vrijeme odlaska</th>
+                            <th>Odobreno</th>
+                            <th><a href="@Url.Action("Create","PracticeAttendances")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                            <th>Odobri</th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Date.ToString("d")</td>
+                            <td>@item.TimeStart.ToString("t")</td>
+                            <td>@item.TimeEnd.ToString("t")</td>
+                            <td>
+                                @{
+                                    if (item.MentorConfirmation)
+                                    {
+                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:green " class="badge" readonly>Odobreno</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="#" style="padding: 3px 10px 3px 10px; background-color:red " class="badge" readonly>Nije Odobreno</a>
+                                    }
+                                }
+                            </td>
+                            <td>
+                                <a href="@Url.Action("Details","PracticeAttendances", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>View</a>
+                                <a href="@Url.Action("Delete","PracticeAttendances", item)" class="btn btn-danger btn-xs"><i class="fa fa-trash-0"></i>Delete</a>
+                            </td>
+                            <td>
+                                <button class="btn btn-basic btn-block btn-xs js-toggle" data-PracticeAttendance-id="@item.Id"><i class="fa fa-toggle-on"></i>@(item.MentorConfirmation ? "Ponisti" : "Odobri")</button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#PracticeAttendance').DataTable();
+        });
+
+        $("#PracticeAttendance").on("click", ".js-toggle", function () {
+            var button = $(this);
+            bootbox.confirm("Jeste li sigurni da zelite promijeniti status (odobri-ponisti)?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/PracticeAttendances/ToggleStatus/" + button.attr("data-PracticeAttendance-id"),
+                        method: "POST",
+                        success: function () {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
