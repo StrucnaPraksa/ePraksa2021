@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
 using PracticeManagement.Core.Models;
 using PracticeManagement.Core.Repositories;
+using Microsoft.AspNet.Identity;
 
 namespace PracticeManagement.Persistence.Repositories
 {
@@ -15,12 +17,14 @@ namespace PracticeManagement.Persistence.Repositories
         {
             _context = context;
         }
-        public IEnumerable<StudentDnevnik> GetStudentDnevniks()
+        public IEnumerable<StudentDnevnik> GetStudentDnevniks(int praksaId)
         {
+            
             return _context.StudentDnevniks
                 .Include(f => f.StudentPraksa)
                 .Include(f => f.StudentPraksa.Mentor)
-                .Include(f => f.StudentPraksa.Firm);
+                .Include(f => f.StudentPraksa.Firm)
+                .Where(f => f.StudentPraksa.Id == praksaId);
         }
 
         public StudentDnevnik GetStudentDnevnik(int id)

@@ -8,7 +8,7 @@ namespace PracticeManagement.Core.Repositories
 {
     public interface IStudentDnevnikRepository
     {
-        IEnumerable<StudentDnevnik> GetStudentDnevniks();
+        IEnumerable<StudentDnevnik> GetStudentDnevniks(int praksaId);
         void Add(StudentDnevnik studentDnevnik);
         void Delete(int id);
         StudentDnevnik GetStudentDnevnik(int id);

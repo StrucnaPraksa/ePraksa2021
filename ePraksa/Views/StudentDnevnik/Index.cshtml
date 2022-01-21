@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PracticeManagement.Core.Models.StudentDnevnik>
+﻿@model PracticeManagement.Core.ViewModel.StudentDnevnikIndexViewModel
 @{
     ViewBag.Title = "StudentDnevnik";
 }
@@ -23,10 +23,10 @@
                             <th>ODOBRENO</th>
                             <th>ACTIONS</th>
                             <th>ODOBRI PRAKSU</th>
-                            <th><a href="@Url.Action("Create","StudentDnevnik")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                            <th><a href="@Url.Action("Create","StudentDnevnik", new { praksaId = Model.praksaId })" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
                         </tr>
                     </thead>
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.StudentDnevniks)
                     {
                         <tr>
                             <td>@item.Id</td>

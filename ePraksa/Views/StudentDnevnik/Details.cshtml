@@ -37,7 +37,7 @@
                         <li> <i class="fa fa-leanpub"><strong>Komentar Student:</strong>@Model.studentDnevnik.dodatno</i></li>
                         <li> <i class="fa fa-leanpub"><strong>Komentar Mentor:</strong>@Model.studentDnevnik.komentar</i></li>
                     </ul>
-                    <a href="@Url.Action("Index","StudentDnevnik")" class="btn btn-default">Back</a>
+                    <a href="@Url.Action("Index","StudentDnevnik", new { praksaId = Model.studentDnevnik.studentPraksaId })" class="btn btn-default">Back</a>
                     <br />
                 </div>
             </div>

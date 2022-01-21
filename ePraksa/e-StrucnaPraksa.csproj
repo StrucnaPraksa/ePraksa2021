@@ -324,6 +324,7 @@
     <Compile Include="Core\ViewModel\StudentDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentDnevnikDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentDnevnikFormViewModel.cs" />
+    <Compile Include="Core\ViewModel\StudentDnevnikIndexViewModel.cs" />
     <Compile Include="Core\ViewModel\StudentFormViewModel.cs" />
     <Compile Include="Core\ViewModel\ProfesorDetailViewModel.cs" />
     <Compile Include="Core\ViewModel\ValidDate.cs" />

@@ -13,18 +13,23 @@ namespace PracticeManagement.Controllers
         {
             _unitOfWork = unitOfWork;
         }
-        public ActionResult Index()
+
+        [Authorize(Roles = RoleName.MentorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.StudentRoleName)]
+        public ActionResult Index(int praksaId)
         {
-            var StudentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevniks();
-            return View(StudentDnevnik);
+            var StudentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevniks(praksaId);
+            var model = new StudentDnevnikIndexViewModel{ StudentDnevniks = StudentDnevnik, praksaId = praksaId };
+            return View(model);
         }
 
-        public ActionResult Create()
+        [Authorize(Roles = RoleName.StudentRoleName)]
+        public ActionResult Create(int praksaId)
         {
             var viewModel = new StudentDnevnikFormViewModel
             {
-                StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks(),
-                Heading = "New Student"
+                StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks(praksaId),
+                Heading = "New Student",
+                studentPraksaId = praksaId,
             };
             return View("StudentDnevnikForm", viewModel);
         }
@@ -35,14 +40,14 @@ namespace PracticeManagement.Controllers
         {
             if (!ModelState.IsValid)
             {
-                viewModel.StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks();
+                viewModel.StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks(viewModel.studentPraksaId);
                 return View("StudentDnevnikFormViewModel", viewModel);
 
             }
 
             var studentDnevnik = new StudentDnevnik
             {
-                studentPraksaId = 1,
+                studentPraksaId = viewModel.studentPraksaId,
                 datum = System.DateTime.Now,
                 aktivnost = viewModel.aktivnost,
                 linkovi = viewModel.linkovi,
@@ -52,8 +57,10 @@ namespace PracticeManagement.Controllers
 
             _unitOfWork.StudentDnevniks.Add(studentDnevnik);
             _unitOfWork.Complete();
-            return RedirectToAction("Index", "StudentDnevnik");
+            return RedirectToAction("Index", "StudentDnevnik", new { praksaId = viewModel.studentPraksaId });
         }
+
+        [Authorize(Roles = RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Edit(int id)
         {
             var StudentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevnik(id);
@@ -61,6 +68,7 @@ namespace PracticeManagement.Controllers
 
             var viewModel = new StudentDnevnikFormViewModel()
             {
+                studentPraksaId = StudentDnevnik.studentPraksaId,
                 aktivnost = StudentDnevnik.aktivnost,
                 linkovi = StudentDnevnik.linkovi,
                 dodatno = StudentDnevnik.dodatno,
@@ -74,7 +82,7 @@ namespace PracticeManagement.Controllers
         {
             if (!ModelState.IsValid)
             {
-                viewModel.StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks();
+                viewModel.StudentDnevniks = _unitOfWork.StudentDnevniks.GetStudentDnevniks(viewModel.studentPraksaId);
                 return View("StudentDnevnikFormViewModel", viewModel);
             }
 
@@ -85,31 +93,35 @@ namespace PracticeManagement.Controllers
             studentDnevnik.komentar = viewModel.komentar;
             _unitOfWork.Complete();
 
-            return RedirectToAction("Index", "StudentDnevnik");
+            return RedirectToAction("Index", "StudentDnevnik", new { praksaId = viewModel.studentPraksaId });
         }
 
+        [Authorize(Roles = RoleName.StudentRoleName)]
         public ActionResult Delete(StudentDnevnik st)
         {
             _unitOfWork.StudentDnevniks.Delete(st.Id);
             _unitOfWork.Complete();
-            return RedirectToAction("Index", "StudentDnevnik");
+            return RedirectToAction("Index", "StudentDnevnik", new { praksaId = st.studentPraksaId });
         }
 
-        //[Authorize(Roles = RoleName.MentorRoleName)]
+        [Authorize(Roles = RoleName.MentorRoleName)]
         [HttpPost]
         public ActionResult ToggleStatus(int id)
         {
             var studentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevnik(id);
             studentDnevnik.Odobreno = !studentDnevnik.Odobreno;
             _unitOfWork.Complete();
-            return RedirectToAction("Index", "StudentDnevnik");
+            return RedirectToAction("Index", "StudentDnevnik", new { praksaId = id });
         }
 
+        [Authorize(Roles = RoleName.MentorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Details(int id)
         {
             var viewModel = new StudentDnevnikDetailViewModel()
             {
-                studentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevnik(id)
+                studentDnevnik = _unitOfWork.StudentDnevniks.GetStudentDnevnik(id),
+                praksaId = id
+   
             };
             return View("Details", viewModel);
         }

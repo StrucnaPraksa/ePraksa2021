@@ -6,9 +6,10 @@ using System.Web;
 
 namespace PracticeManagement.Core.ViewModel
 {
-    public class StudentDnevnikDetailViewModel
+    public class StudentDnevnikIndexViewModel
     {
-        public StudentDnevnik studentDnevnik { get; set; }
+        public IEnumerable<StudentDnevnik> StudentDnevniks { get; set; }
         public int praksaId { get; set; }
+
     }
 }

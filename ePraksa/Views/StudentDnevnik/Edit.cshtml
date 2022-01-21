@@ -15,6 +15,7 @@
                     @using (Html.BeginForm())
                     {
                         @Html.HiddenFor(m => m.Id)
+                        @Html.HiddenFor(m => m.studentPraksaId)
 
                         <div class="form-group">
                             <label class="control-label col-sm-3 col-xs-12">Aktivnost</label>
@@ -47,7 +48,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-4">
-                                <a href="@Url.Action("Index","StudentDnevnik")" class="btn btn-default">Back</a>
+                                <a href="@Url.Action("Index","StudentDnevnik", new { praksaId = Model.studentPraksaId })" class="btn btn-default">Back</a>
                                 <button type="submit" class="btn btn-success">Save</button>
                             </div>
                         </div>
