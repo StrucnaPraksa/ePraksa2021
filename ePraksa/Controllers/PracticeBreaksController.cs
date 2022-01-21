@@ -16,6 +16,7 @@ namespace PracticeManagement.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Index(int id)
         {
             var attendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id);
@@ -30,6 +31,7 @@ namespace PracticeManagement.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Details(int id)
         {
             var viewModel = new PracticeBreakDetailsViewModel
@@ -40,6 +42,7 @@ namespace PracticeManagement.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Create(int practiceAttendanceId)
         {
             var practiceAttendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(practiceAttendanceId);
@@ -56,6 +59,7 @@ namespace PracticeManagement.Controllers
             return View("Details", viewModel);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Save(PracticeBreak practiceBreak)
         {
             if (practiceBreak.TimeStart > practiceBreak.TimeEnd)
@@ -78,12 +82,13 @@ namespace PracticeManagement.Controllers
             return RedirectToAction("Index", new { id = practiceBreak.PracticeAttendanceId });
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Delete(int id, int practiceAttendanceId)
         {
             _unitOfWork.PracticeBreaks.DeletePracticeBreak(id);
             _unitOfWork.Complete();
 
-            return RedirectToAction("Index", new {id = practiceAttendanceId });
+            return RedirectToAction("Index", new { id = practiceAttendanceId });
         }
     }
 }

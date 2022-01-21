@@ -15,12 +15,14 @@ namespace PracticeManagement.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Index()
         {
             var practiceAttendances = _unitOfWork.PracticeAttendances.GetPracticeAttendances();
             return View(practiceAttendances);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Details(int id)
         {
             var viewModel = new PracticeAttendanceDetailsViewModel
@@ -28,14 +30,17 @@ namespace PracticeManagement.Controllers
                 PracticeAttendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id)
             };
 
+            if (User.IsInRole(RoleName.StudentRoleName) && viewModel.PracticeAttendance.MentorConfirmation)
+                return new HttpStatusCodeResult(409);
+
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Create()
         {
             var viewModel = new PracticeAttendanceDetailsViewModel
             {
-                
                 PracticeAttendance = new PracticeAttendance()
                 {
                     Date = DateTime.Now.Date,
@@ -47,8 +52,12 @@ namespace PracticeManagement.Controllers
             return View("Details", viewModel);
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Save(PracticeAttendance practiceAttendance)
         {
+            if (User.IsInRole(RoleName.StudentRoleName) && practiceAttendance.MentorConfirmation)
+                return new HttpStatusCodeResult(409);
+
             if (practiceAttendance.TimeStart > practiceAttendance.TimeEnd)
                 return new HttpStatusCodeResult(409);
 
@@ -58,6 +67,7 @@ namespace PracticeManagement.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Delete(int id)
         {
             _unitOfWork.PracticeAttendances.DeletePracticeAttendance(id);
@@ -67,6 +77,7 @@ namespace PracticeManagement.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.MentorRoleName)]
         public ActionResult ToggleStatus(int id)
         {
             var attendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id);
@@ -76,6 +87,7 @@ namespace PracticeManagement.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult PracticeBreak(PracticeAttendance practiceAttendance)
         {
             return RedirectToAction("Index", "PracticeBreaks", new { id = practiceAttendance.Id });
