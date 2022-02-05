@@ -1,4 +1,5 @@
 ﻿using PracticeManagement.Core;
+using PracticeManagement.Core.Helpers;
 using PracticeManagement.Core.Models;
 using PracticeManagement.Core.ViewModel;
 using System;
@@ -18,7 +19,10 @@ namespace PracticeManagement.Controllers
         [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.ProfesorRoleName + "," + RoleName.MentorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Index()
         {
-            var practiceAttendances = _unitOfWork.PracticeAttendances.GetPracticeAttendances();
+            var userId = IdentityHelpers.GetUserId(User);
+            var isStudent = User.IsInRole(RoleName.StudentRoleName);
+
+            var practiceAttendances = _unitOfWork.PracticeAttendances.GetPracticeAttendances(userId, isStudent);
             return View(practiceAttendances);
         }
 
@@ -27,7 +31,7 @@ namespace PracticeManagement.Controllers
         {
             var viewModel = new PracticeAttendanceDetailsViewModel
             {
-                PracticeAttendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id)
+                PracticeAttendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id),
             };
 
             if (User.IsInRole(RoleName.StudentRoleName) && viewModel.PracticeAttendance.MentorConfirmation)
@@ -39,6 +43,7 @@ namespace PracticeManagement.Controllers
         [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Create()
         {
+            var studentId = IdentityHelpers.GetUserId(User);
             var viewModel = new PracticeAttendanceDetailsViewModel
             {
                 PracticeAttendance = new PracticeAttendance()
@@ -46,6 +51,7 @@ namespace PracticeManagement.Controllers
                     Date = DateTime.Now.Date,
                     TimeStart = DateTime.Now,
                     TimeEnd = DateTime.Now,
+                    StudentId = _unitOfWork.PracticeAttendances.GetStudentId(studentId)
                 }
             };
 

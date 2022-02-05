@@ -35,9 +35,23 @@ namespace PracticeManagement.Persistence.Repositories
             return _context.PracticeAttendances.Find(id);
         }
 
-        public IEnumerable<PracticeAttendance> GetPracticeAttendances()
+        public IEnumerable<PracticeAttendance> GetPracticeAttendances(string userId, bool isStudent)
         {
-            return _context.PracticeAttendances.ToList();
+            if (!isStudent)
+                return _context.PracticeAttendances.ToList();
+
+            var studentId = GetStudentId(userId);
+            var practiceAttendances = _context.PracticeAttendances.Where(x => x.StudentId == studentId).ToList();
+
+            return practiceAttendances;
+        }
+
+        public int GetStudentId(string userId)
+        {
+            var userEmail = _context.Users.First(x => x.Id == userId).Email;
+            var studentId = _context.Students.First(x => x.Email == userEmail).Id;
+
+            return studentId;
         }
 
         public void UpdatePracticeAttendance(PracticeAttendance practiceAttendance)

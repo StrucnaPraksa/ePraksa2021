@@ -279,6 +279,7 @@
     <Compile Include="Core\Dto\PersonDto.cs" />
     <Compile Include="Core\Dto\ProfesorDto.cs" />
     <Compile Include="Core\Dto\FacultyDto.cs" />
+    <Compile Include="Core\Helpers\IdentityHelpers.cs" />
     <Compile Include="Core\Helpers\Range.cs" />
     <Compile Include="Core\Models\Firm.cs" />
     <Compile Include="Core\Models\Faculty2.cs" />

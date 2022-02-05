@@ -911,8 +911,6 @@ E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debu
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CopyComplete
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\PracticeManagement.dll
 E:\_PERSONAL\_ASPIRA2021_2022\PRIPREMA\20211207\ePraksaTemplate\ePraksa\obj\Debug\PracticeManagement.pdb
-C:\Personal\ePraksa\ePraksa\bin\System.Web.Mvc.dll
-C:\Personal\ePraksa\ePraksa\bin\System.Web.Razor.xml
 C:\Personal\ePraksa\ePraksa\bin\ApplicationInsights.config
 C:\Personal\ePraksa\ePraksa\bin\roslyn\csc.exe
 C:\Personal\ePraksa\ePraksa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -964,6 +962,7 @@ C:\Personal\ePraksa\ePraksa\bin\Owin.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Net.Http.Formatting.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Helpers.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Http.WebHost.dll
+C:\Personal\ePraksa\ePraksa\bin\System.Web.Mvc.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Optimization.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Razor.dll
 C:\Personal\ePraksa\ePraksa\bin\System.Web.WebPages.Deployment.dll
@@ -1004,11 +1003,12 @@ C:\Personal\ePraksa\ePraksa\bin\System.Web.Helpers.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Http.WebHost.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Mvc.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.Optimization.xml
+C:\Personal\ePraksa\ePraksa\bin\System.Web.Razor.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.WebPages.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.WebPages.Deployment.xml
 C:\Personal\ePraksa\ePraksa\bin\System.Web.WebPages.Razor.xml
-C:\Personal\ePraksa\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.AssemblyReference.cache
 C:\Personal\ePraksa\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CoreCompileInputs.cache
 C:\Personal\ePraksa\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.CopyComplete
 C:\Personal\ePraksa\ePraksa\obj\Debug\PracticeManagement.dll
 C:\Personal\ePraksa\ePraksa\obj\Debug\PracticeManagement.pdb
+C:\Personal\ePraksa\ePraksa\obj\Debug\e-StrucnaPraksa.csproj.AssemblyReference.cache

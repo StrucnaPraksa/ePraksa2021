@@ -5,7 +5,7 @@ namespace PracticeManagement.Core.Repositories
 {
     public interface IPracticeAttendanceRepository
     {
-        IEnumerable<PracticeAttendance> GetPracticeAttendances();
+        IEnumerable<PracticeAttendance> GetPracticeAttendances(string userId, bool isStudent);
 
         PracticeAttendance GetPracticeAttendance(int id);
 
@@ -16,5 +16,7 @@ namespace PracticeManagement.Core.Repositories
         void UpdatePracticeAttendance(PracticeAttendance practiceAttendance);
 
         void AddPracticeAttendance(PracticeAttendance practiceAttendance);
+
+        int GetStudentId(string userId);
     }
 }

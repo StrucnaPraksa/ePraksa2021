@@ -29,6 +29,12 @@
                         </tr>
                     }
                 </table>
+                <div class="col-lg-6">
+                    <a href="@Url.Action( "GoBack", "PracticeBreaks")"
+                       class="btn btn-info">
+                        Nazad
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -40,19 +46,19 @@
             $('#PracticeBreak').DataTable();
         });
 
-                                                //$("#PracticeBreak").on("click", ".js-toggle", function () {
-                                                //    var button = $(this);
-                                                //    bootbox.confirm("Jeste li sigurni da zelite promijeniti status (odobri-ponisti)?", function (result) {
-                                                //        if (result) {
-                                                //            $.ajax({
-                                                //                url: "/StudentDnevnik/ToggleStatus/" + button.attr("data-StudentDnevnik-id"),
-                                                //                method: "POST",
-                                                //                success: function () {
-                                                //                    location.reload();
-                                                //                }
-                                                //            });
-                                                //        }
-                                                //    });
-                                                //});
+                                                    //$("#PracticeBreak").on("click", ".js-toggle", function () {
+                                                    //    var button = $(this);
+                                                    //    bootbox.confirm("Jeste li sigurni da zelite promijeniti status (odobri-ponisti)?", function (result) {
+                                                    //        if (result) {
+                                                    //            $.ajax({
+                                                    //                url: "/StudentDnevnik/ToggleStatus/" + button.attr("data-StudentDnevnik-id"),
+                                                    //                method: "POST",
+                                                    //                success: function () {
+                                                    //                    location.reload();
+                                                    //                }
+                                                    //            });
+                                                    //        }
+                                                    //    });
+                                                    //});
     </script>
 }

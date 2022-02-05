@@ -5,7 +5,7 @@ namespace PracticeManagement.Core.Repositories
 {
     public interface IPracticeBreakRepository
     {
-        IEnumerable<PracticeBreak> GetPracticeBreaks();
+        IEnumerable<PracticeBreak> GetPracticeBreaks(int id);
 
         PracticeBreak GetPracticeBreak(int id);
 

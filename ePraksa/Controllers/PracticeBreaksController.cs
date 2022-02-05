@@ -20,7 +20,7 @@ namespace PracticeManagement.Controllers
         public ActionResult Index(int id)
         {
             var attendance = _unitOfWork.PracticeAttendances.GetPracticeAttendance(id);
-            var breaks = _unitOfWork.PracticeBreaks.GetPracticeBreaks();
+            var breaks = _unitOfWork.PracticeBreaks.GetPracticeBreaks(id);
 
             var viewModel = new PracticeBreakIndexViewModel
             {
@@ -59,6 +59,11 @@ namespace PracticeManagement.Controllers
             return View("Details", viewModel);
         }
 
+        public ActionResult GoBack()
+        {
+            return RedirectToAction("Index", "PracticeAttendances");
+        }
+
         [Authorize(Roles = RoleName.AdministratorRoleName + "," + RoleName.StudentRoleName)]
         public ActionResult Save(PracticeBreak practiceBreak)
         {
@@ -67,7 +72,7 @@ namespace PracticeManagement.Controllers
 
             var breakRange = new Range<DateTime>(practiceBreak.TimeStart, practiceBreak.TimeEnd);
 
-            var breaks = _unitOfWork.PracticeBreaks.GetPracticeBreaks();
+            var breaks = _unitOfWork.PracticeBreaks.GetPracticeBreaks(practiceBreak.PracticeAttendanceId);
             foreach (var @break in breaks)
             {
                 var range = new Range<DateTime>(@break.TimeStart, @break.TimeEnd);
