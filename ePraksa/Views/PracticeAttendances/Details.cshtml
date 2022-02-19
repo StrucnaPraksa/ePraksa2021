@@ -17,7 +17,7 @@
 </div>
 <br />
 <br />
-@using (Html.BeginForm("Save", "PracticeAttendances", FormMethod.Post))
+@using (Html.BeginForm("SaveAttendance", "PracticeAttendances", FormMethod.Post))
 {
     @Html.HiddenFor(x => x.PracticeAttendance.Id)
     @Html.HiddenFor(x => x.PracticeAttendance.StudentId)
@@ -53,14 +53,46 @@
         <div class="col-lg-6">
             <input type="submit" value="Spremi" class="btn btn-primary">
         </div>
-        <div class="col-lg-6">
-            <a href="@Url.Action("PracticeBreak", "PracticeAttendances", new {id = Model.PracticeAttendance.Id})"
-               class="btn btn-info">
-                Pauza
-            </a>
-        </div>
     </div>
 }
+
+<br />
+<br />
+<div class="page-title">
+    <div class="title_left">
+        <h3>Pauze</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <table id="PracticeBreak" class="data table table-striped no-margin">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Vrijeme dolaska</th>
+                            <th>Vrijeme odlaska</th>
+                            <th><a href="@Url.Action("CreateBreak", "PracticeAttendances", new {practiceAttendanceId = Model.PracticeAttendance.Id})" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                        </tr>
+                    </thead>
+                    @foreach (var item in Model.PracticeBreaks)
+                    {
+                        <tr>
+                            <td>@item.PracticeAttendance.Date.ToString("d")</td>
+                            <td>@item.TimeStart.ToString("t")</td>
+                            <td>@item.TimeEnd.ToString("t")</td>
+                            <td>
+                                <a href="@Url.Action("DetailsBreak","PracticeAttendances", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>View</a>
+                                <a href="@Url.Action("DeleteBreak","PracticeAttendances", new { id = item.Id, practiceAttendanceId = Model.PracticeAttendance.Id })" class="btn btn-danger btn-xs"><i class="fa fa-trash-0"></i>Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 @section scripts{
     <script>
@@ -72,6 +104,24 @@
                 "paging": false,
                 "filter": false,
                 "info": false
-            });</script>
+            });
 
+            $('#PracticeBreak').DataTable();
+        });
+
+        $("#PracticeAttendance").on("click", ".js-toggle", function () {
+            var button = $(this);
+            bootbox.confirm("Jeste li sigurni da zelite promijeniti status (odobri-ponisti)?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/PracticeAttendances/ToggleStatus/" + button.attr("data-PracticeAttendance-id"),
+                        method: "POST",
+                        success: function () {
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 }

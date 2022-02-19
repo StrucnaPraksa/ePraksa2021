@@ -10,5 +10,6 @@ namespace PracticeManagement.Core.ViewModel
     public class PracticeAttendanceDetailsViewModel
     {
         public PracticeAttendance PracticeAttendance { get; set; }
+        public IEnumerable<PracticeBreak> PracticeBreaks { get; set; }
     }
 }

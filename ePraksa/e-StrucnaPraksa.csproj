@@ -271,7 +271,6 @@
     <Compile Include="Controllers\MentorsController.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Controllers\PracticeAttendancesController.cs" />
-    <Compile Include="Controllers\PracticeBreaksController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Core\Dto\Faculty2Dto.cs" />
     <Compile Include="Core\Dto\FacultyTypeDto.cs" />
@@ -1258,8 +1257,7 @@
     <Content Include="Views\Account\MentorForm.cshtml" />
     <Content Include="Views\PracticeAttendances\Index.cshtml" />
     <Content Include="Views\PracticeAttendances\Details.cshtml" />
-    <Content Include="Views\PracticeBreaks\Details.cshtml" />
-    <Content Include="Views\PracticeBreaks\Index.cshtml" />
+    <Content Include="Views\PracticeAttendances\BreakDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

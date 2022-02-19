@@ -17,7 +17,7 @@
 </div>
 <br />
 <br />
-@using (Html.BeginForm("Save", "PracticeBreaks", FormMethod.Post))
+@using (Html.BeginForm("SaveBreak", "PracticeAttendances", FormMethod.Post))
 {
     @Html.HiddenFor(x => x.PracticeBreak.Id)
     @Html.HiddenFor(x => x.PracticeBreak.PracticeAttendanceId)

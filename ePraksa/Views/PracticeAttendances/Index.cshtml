@@ -14,7 +14,7 @@
                             <th>Vrijeme dolaska</th>
                             <th>Vrijeme odlaska</th>
                             <th>Odobreno</th>
-                            <th><a href="@Url.Action("Create","PracticeAttendances")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
+                            <th><a href="@Url.Action("CreateAttendance","PracticeAttendances")" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>Add</a></th>
                             <th>Odobri</th>
                         </tr>
                     </thead>
@@ -37,8 +37,8 @@
                                 }
                             </td>
                             <td>
-                                <a href="@Url.Action("Details","PracticeAttendances", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>View</a>
-                                <a href="@Url.Action("Delete","PracticeAttendances", item)" class="btn btn-danger btn-xs"><i class="fa fa-trash-0"></i>Delete</a>
+                                <a href="@Url.Action("DetailsAttendance","PracticeAttendances", new { id = item.Id})" class="btn btn-default btn-xs"><i class="fa fa-folder"></i>View</a>
+                                <a href="@Url.Action("DeleteAttendance","PracticeAttendances", new { id = item.Id})" class="btn btn-danger btn-xs"><i class="fa fa-trash-0"></i>Delete</a>
                             </td>
                             <td>
                                 <button class="btn btn-basic btn-block btn-xs js-toggle" data-PracticeAttendance-id="@item.Id"><i class="fa fa-toggle-on"></i>@(item.MentorConfirmation ? "Ponisti" : "Odobri")</button>
